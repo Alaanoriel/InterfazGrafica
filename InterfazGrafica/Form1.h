@@ -2,7 +2,8 @@
 
 
 #include "VentanaADM.h" //Incluyo mi segundo formulario
-
+#include "VentanaEmpleados.h"
+#include <conio.h>
 
 
 namespace CppCLRWinformsProjekt {
@@ -89,9 +90,11 @@ namespace CppCLRWinformsProjekt {
 			this->Txt_Codigo->Location = System::Drawing::Point(148, 132);
 			this->Txt_Codigo->Multiline = true;
 			this->Txt_Codigo->Name = L"Txt_Codigo";
-			this->Txt_Codigo->Size = System::Drawing::Size(248, 28);
+			this->Txt_Codigo->ShortcutsEnabled = false;
+			this->Txt_Codigo->Size = System::Drawing::Size(245, 25);
 			this->Txt_Codigo->TabIndex = 1;
 			this->Txt_Codigo->TextChanged += gcnew System::EventHandler(this, &Form1::Txt_Codigo_TextChanged);
+			this->Txt_Codigo->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &Form1::Txt_Codigo_KeyPress);
 			// 
 			// Label_Codigo
 			// 
@@ -124,23 +127,41 @@ namespace CppCLRWinformsProjekt {
 			this->Controls->Add(this->Txt_Codigo);
 			this->Controls->Add(this->Bton_LoginADM);
 			this->Name = L"Form1";
+			this->Text = L"Inicio";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
-#pragma endregion
 
 	//Label "Codigo" Menu inicio Login
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 
+	
+	//Al ingresar una letra por "KeyPress" uso el codigo ASCII para que el text solo acepte números
+	private: System::Void Txt_Codigo_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+
+		if((e->KeyChar >=32 && e->KeyChar <=47 ) || (e->KeyChar >=58 && e->KeyChar <=255))
+		{
+			MessageBox::Show("Ingresar unicamente números", "ERROR", MessageBoxButtons::OK , MessageBoxIcon::Exclamation);
+			e->Handled = true;
+			return;
+		}
+
+	}
 
 
+		   //Texto donde se pide el codigo para iniciar sesion.
+	private: System::Void Txt_Codigo_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+
+}
 
 
 	// Boton "Administrador" Menu inicio Login
 	private: System::Void Bton_Login_Click(System::Object^ sender, System::EventArgs^ e) {
+
+
 
 		//Creamos un objeto del formulario que vamos a abrir e invocamos a su metodo constructor.
 		InterfazGrafica::VentanaADM^ VentanaADM = gcnew InterfazGrafica::VentanaADM();  
@@ -164,6 +185,14 @@ namespace CppCLRWinformsProjekt {
 
 	// Boton "Empleados" Menu inicio Login
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+		InterfazGrafica::VentanaEmpleados^ VentanaEmpleados = gcnew InterfazGrafica::VentanaEmpleados();
+		this->Visible = false;
+
+
+		VentanaEmpleados->ShowDialog();
+		this->Visible = true;
+	
 	}
 
 
@@ -174,9 +203,5 @@ private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 
 
-
-	//Texto donde se pide el codigo para iniciar sesion.
-private: System::Void Txt_Codigo_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
 };
 }
