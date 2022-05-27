@@ -2,7 +2,7 @@
 
 
 #include "VentanaADM.h" //Incluyo mi segundo formulario
-
+#include "VentanaEmpleados.h"
 
 
 namespace CppCLRWinformsProjekt {
@@ -124,6 +124,7 @@ namespace CppCLRWinformsProjekt {
 			this->Controls->Add(this->Txt_Codigo);
 			this->Controls->Add(this->Bton_LoginADM);
 			this->Name = L"Form1";
+			this->Text = L"Inicio";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -164,6 +165,14 @@ namespace CppCLRWinformsProjekt {
 
 	// Boton "Empleados" Menu inicio Login
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+		InterfazGrafica::VentanaEmpleados^ VentanaEmpleados = gcnew InterfazGrafica::VentanaEmpleados();
+		this->Visible = false;
+
+
+		VentanaEmpleados->ShowDialog();
+		this->Visible = true;
+	
 	}
 
 

@@ -38,6 +38,9 @@
     <ClInclude Include="VentanaADM.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="VentanaEmpleados.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinformsProjekt.cpp">
@@ -53,6 +56,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="VentanaADM.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="VentanaEmpleados.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
