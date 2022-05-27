@@ -1,5 +1,10 @@
 #pragma once
 
+
+#include "VentanaADM.h" //Incluyo mi segundo formulario
+
+
+
 namespace CppCLRWinformsProjekt {
 
 	using namespace System;
@@ -125,14 +130,52 @@ namespace CppCLRWinformsProjekt {
 
 		}
 #pragma endregion
+
+	//Label "Codigo" Menu inicio Login
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+
+
+
+
+
+	// Boton "Administrador" Menu inicio Login
 	private: System::Void Bton_Login_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		//Creamos un objeto del formulario que vamos a abrir e invocamos a su metodo constructor.
+		InterfazGrafica::VentanaADM^ VentanaADM = gcnew InterfazGrafica::VentanaADM();  
+
+		//Ocultamos el formulario anterior, llamamos al objeto y ponemos su visibilidad en false.
+		this->Visible = false;
+
+
+		//Ahora los mostramos
+		VentanaADM->ShowDialog();
+		//Cuando abra el segundo formulario el anterior se oculta
+		this->Visible = true;
+
+
+
 	}
+
+
+
+
+
+	// Boton "Empleados" Menu inicio Login
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+
+
+
+
+	//Formulario Login
 private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
 }
+
+
+
+	//Texto donde se pide el codigo para iniciar sesion.
 private: System::Void Txt_Codigo_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
