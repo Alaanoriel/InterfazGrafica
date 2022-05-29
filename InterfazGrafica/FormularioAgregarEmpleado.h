@@ -190,6 +190,11 @@ namespace InterfazGrafica {
 
 		}
 #pragma endregion
+
+
+
+
+	//Boton Volver, cierro el formulario.
 	private: System::Void Bton_Volver_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
