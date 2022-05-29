@@ -46,6 +46,7 @@ namespace InterfazGrafica {
 	private: System::Windows::Forms::TextBox^ Txt_DNI;
 	private: System::Windows::Forms::Button^ Bton_Guardar;
 	private: System::Windows::Forms::Button^ Bton_Volver;
+	private: System::Windows::Forms::ComboBox^ Box_Categoria;
 
 	private:
 		/// <summary>
@@ -71,6 +72,7 @@ namespace InterfazGrafica {
 			this->Txt_DNI = (gcnew System::Windows::Forms::TextBox());
 			this->Bton_Guardar = (gcnew System::Windows::Forms::Button());
 			this->Bton_Volver = (gcnew System::Windows::Forms::Button());
+			this->Box_Categoria = (gcnew System::Windows::Forms::ComboBox());
 			this->SuspendLayout();
 			// 
 			// CodigoEmpleado_Label
@@ -166,12 +168,23 @@ namespace InterfazGrafica {
 			this->Bton_Volver->UseVisualStyleBackColor = false;
 			this->Bton_Volver->Click += gcnew System::EventHandler(this, &FormularioAgregarEmpleado::Bton_Volver_Click);
 			// 
+			// Box_Categoria
+			// 
+			this->Box_Categoria->FormattingEnabled = true;
+			this->Box_Categoria->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Empleado", L"Gerente" });
+			this->Box_Categoria->Location = System::Drawing::Point(159, 280);
+			this->Box_Categoria->Name = L"Box_Categoria";
+			this->Box_Categoria->Size = System::Drawing::Size(197, 21);
+			this->Box_Categoria->TabIndex = 11;
+			this->Box_Categoria->Text = L"Seleccionar";
+			// 
 			// FormularioAgregarEmpleado
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(381, 370);
+			this->Controls->Add(this->Box_Categoria);
 			this->Controls->Add(this->Bton_Volver);
 			this->Controls->Add(this->Bton_Guardar);
 			this->Controls->Add(this->Txt_DNI);
