@@ -163,7 +163,7 @@ namespace CppCLRWinformsProjekt {
 	private: System::Void Bton_Login_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 
-		
+		//En caso de que el texto este vacio, saldra una ventana pidiendo que se ingrese algun codigo
 		if(Txt_Codigo->Text == "")
 		{
 			MessageBox::Show("Ingrese algun digito","ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
