@@ -243,18 +243,19 @@ namespace InterfazGrafica {
 
 		}
 #pragma endregion
+		//Strip, no tocar, rompi todo xd ja 
 private: System::Void Strip_ADM_ItemClicked(System::Object^ sender, System::Windows::Forms::ToolStripItemClickedEventArgs^ e) {
 	}
 
 
 
 
-
+//Opcion Buscar Empleado llamo al formulario.
 private: System::Void buscasEmpleadoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 
 
-
+//Opcion agregarempleado, llamo al formulario.
 private: System::Void agregarEmpleadoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	InterfazGrafica::FormularioAgregarEmpleado^ FormularioAgregarEmpleado = gcnew InterfazGrafica::FormularioAgregarEmpleado;
