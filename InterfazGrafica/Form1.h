@@ -154,28 +154,36 @@ namespace CppCLRWinformsProjekt {
 
 		   //Texto donde se pide el codigo para iniciar sesion.
 	private: System::Void Txt_Codigo_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-
 }
 
 
 	// Boton "Administrador" Menu inicio Login
 	private: System::Void Bton_Login_Click(System::Object^ sender, System::EventArgs^ e) {
 
-
+		//Como el textbox es tipo string con Int64::Parse lo pasamos a una variable tipo int, ya que solo queremos numeros
+		int CodigoIngresado = Int64::Parse(Txt_Codigo->Text);
 
 		//Creamos un objeto del formulario que vamos a abrir e invocamos a su metodo constructor.
-		InterfazGrafica::VentanaADM^ VentanaADM = gcnew InterfazGrafica::VentanaADM();  
+		
+		if(CodigoIngresado==123)
+		{
+			InterfazGrafica::VentanaADM^ VentanaADM = gcnew InterfazGrafica::VentanaADM();
 
-		//Ocultamos el formulario anterior, llamamos al objeto y ponemos su visibilidad en false.
-		this->Visible = false;
-
-
-		//Ahora los mostramos
-		VentanaADM->ShowDialog();
-		//Cuando abra el segundo formulario el anterior se oculta
-		this->Visible = true;
+			//Ocultamos el formulario anterior, llamamos al objeto y ponemos su visibilidad en false.
+			this->Visible = false;
 
 
+			//Ahora los mostramos
+			VentanaADM->ShowDialog();
+			//Cuando abra el segundo formulario el anterior se oculta
+			this->Visible = true;
+		
+		}
+
+		else if (CodigoIngresado != 123) {
+
+			MessageBox::Show("Ingrese un codigo valido", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
 
 	}
 
