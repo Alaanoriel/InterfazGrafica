@@ -164,6 +164,7 @@ namespace InterfazGrafica {
 			this->Bton_Volver->TabIndex = 10;
 			this->Bton_Volver->Text = L"Volver";
 			this->Bton_Volver->UseVisualStyleBackColor = false;
+			this->Bton_Volver->Click += gcnew System::EventHandler(this, &FormularioAgregarEmpleado::Bton_Volver_Click);
 			// 
 			// FormularioAgregarEmpleado
 			// 
@@ -189,5 +190,8 @@ namespace InterfazGrafica {
 
 		}
 #pragma endregion
-	};
+	private: System::Void Bton_Volver_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+};
 }
