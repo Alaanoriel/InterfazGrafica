@@ -1,4 +1,5 @@
 #pragma once
+#include "FormularioAgregarEmpleado.h"
 
 namespace InterfazGrafica {
 
@@ -140,6 +141,7 @@ namespace InterfazGrafica {
 			this->agregarEmpleadoToolStripMenuItem->Name = L"agregarEmpleadoToolStripMenuItem";
 			this->agregarEmpleadoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->agregarEmpleadoToolStripMenuItem->Text = L"Agregar empleado";
+			this->agregarEmpleadoToolStripMenuItem->Click += gcnew System::EventHandler(this, &VentanaADM::agregarEmpleadoToolStripMenuItem_Click);
 			// 
 			// bajaDeEmpleadoToolStripMenuItem
 			// 
@@ -241,9 +243,25 @@ namespace InterfazGrafica {
 
 		}
 #pragma endregion
-	private: System::Void Strip_ADM_ItemClicked(System::Object^ sender, System::Windows::Forms::ToolStripItemClickedEventArgs^ e) {
+private: System::Void Strip_ADM_ItemClicked(System::Object^ sender, System::Windows::Forms::ToolStripItemClickedEventArgs^ e) {
 	}
+
+
+
+
+
 private: System::Void buscasEmpleadoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+
+
+
+private: System::Void agregarEmpleadoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	InterfazGrafica::FormularioAgregarEmpleado^ FormularioAgregarEmpleado = gcnew InterfazGrafica::FormularioAgregarEmpleado;
+	FormularioAgregarEmpleado->ShowDialog();
+}
+
+
+
 };
 }
