@@ -54,7 +54,7 @@ namespace InterfazGrafica {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(801, 471);
+			this->ClientSize = System::Drawing::Size(838, 529);
 			this->Name = L"VentanaADM";
 			this->Text = L"VentanaADM";
 			this->ResumeLayout(false);

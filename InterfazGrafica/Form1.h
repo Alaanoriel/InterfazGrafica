@@ -4,7 +4,9 @@
 #include "VentanaADM.h" //Incluyo mi segundo formulario
 #include "VentanaEmpleados.h"
 #include <conio.h>
-
+#include <string>
+#include <sstream>
+using namespace std;
 
 namespace CppCLRWinformsProjekt {
 
@@ -158,15 +160,25 @@ namespace CppCLRWinformsProjekt {
 
 
 	// Boton "Administrador" Menu inicio Login
-	private: System::Void Bton_Login_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void Bton_Login_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+
+		
+		if(Txt_Codigo->Text == "")
+		{
+			MessageBox::Show("Ingrese algun digito","ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 
 		//Como el textbox es tipo string con Int64::Parse lo pasamos a una variable tipo int, ya que solo queremos numeros
 		int CodigoIngresado = Int64::Parse(Txt_Codigo->Text);
 
-		//Creamos un objeto del formulario que vamos a abrir e invocamos a su metodo constructor.
-		
-		if(CodigoIngresado==123)
+
+
+
+		if (CodigoIngresado == 123)
 		{
+			//Creamos un objeto del formulario que vamos a abrir e invocamos a su metodo constructor.
 			InterfazGrafica::VentanaADM^ VentanaADM = gcnew InterfazGrafica::VentanaADM();
 
 			//Ocultamos el formulario anterior, llamamos al objeto y ponemos su visibilidad en false.
@@ -177,12 +189,14 @@ namespace CppCLRWinformsProjekt {
 			VentanaADM->ShowDialog();
 			//Cuando abra el segundo formulario el anterior se oculta
 			this->Visible = true;
-		
+
 		}
+		
 
-		else if (CodigoIngresado != 123) {
-
-			MessageBox::Show("Ingrese un codigo valido", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		else if(CodigoIngresado != 123)
+		{
+			MessageBox::Show("Codigo Invalido", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		
 		}
 
 	}
