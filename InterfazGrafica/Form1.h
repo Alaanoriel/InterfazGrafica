@@ -174,8 +174,6 @@ namespace CppCLRWinformsProjekt {
 		int CodigoIngresado = Int64::Parse(Txt_Codigo->Text);
 
 
-
-
 		if (CodigoIngresado == 123)
 		{
 			//Creamos un objeto del formulario que vamos a abrir e invocamos a su metodo constructor.
