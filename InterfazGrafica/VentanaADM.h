@@ -1,5 +1,6 @@
 #pragma once
 #include "FormularioAgregarEmpleado.h"
+#include "FormularioBuscarEmpleado.h"
 
 namespace InterfazGrafica {
 
@@ -55,6 +56,9 @@ namespace InterfazGrafica {
 	private: System::Windows::Forms::ToolStripMenuItem^ ventasToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ buscarPorFechaToolStripMenuItem;
 
+
+	private: System::Windows::Forms::ToolStripMenuItem^ salirToolStripMenuItem;
+
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
@@ -86,14 +90,15 @@ namespace InterfazGrafica {
 			this->bajaTotalToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ventasToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->buscarPorFechaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->salirToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->Strip_ADM->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// Strip_ADM
 			// 
-			this->Strip_ADM->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->Strip_ADM->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->empleadosToolStripMenuItem,
-					this->productosToolStripMenuItem, this->ventasToolStripMenuItem
+					this->productosToolStripMenuItem, this->ventasToolStripMenuItem, this->salirToolStripMenuItem
 			});
 			this->Strip_ADM->Location = System::Drawing::Point(0, 0);
 			this->Strip_ADM->Name = L"Strip_ADM";
@@ -115,14 +120,14 @@ namespace InterfazGrafica {
 			// buscasEmpleadoToolStripMenuItem
 			// 
 			this->buscasEmpleadoToolStripMenuItem->Name = L"buscasEmpleadoToolStripMenuItem";
-			this->buscasEmpleadoToolStripMenuItem->Size = System::Drawing::Size(172, 22);
-			this->buscasEmpleadoToolStripMenuItem->Text = L"Buscas empleado";
+			this->buscasEmpleadoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->buscasEmpleadoToolStripMenuItem->Text = L"Buscar empleado";
 			this->buscasEmpleadoToolStripMenuItem->Click += gcnew System::EventHandler(this, &VentanaADM::buscasEmpleadoToolStripMenuItem_Click);
 			// 
 			// agregarEmpleadoToolStripMenuItem
 			// 
 			this->agregarEmpleadoToolStripMenuItem->Name = L"agregarEmpleadoToolStripMenuItem";
-			this->agregarEmpleadoToolStripMenuItem->Size = System::Drawing::Size(172, 22);
+			this->agregarEmpleadoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->agregarEmpleadoToolStripMenuItem->Text = L"Agregar empleado";
 			this->agregarEmpleadoToolStripMenuItem->Click += gcnew System::EventHandler(this, &VentanaADM::agregarEmpleadoToolStripMenuItem_Click);
 			// 
@@ -133,7 +138,7 @@ namespace InterfazGrafica {
 					this->bajaTotalToolStripMenuItem
 			});
 			this->bajaDeEmpleadoToolStripMenuItem->Name = L"bajaDeEmpleadoToolStripMenuItem";
-			this->bajaDeEmpleadoToolStripMenuItem->Size = System::Drawing::Size(172, 22);
+			this->bajaDeEmpleadoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->bajaDeEmpleadoToolStripMenuItem->Text = L"Baja de empleado";
 			// 
 			// bajaTemporalToolStripMenuItem
@@ -227,6 +232,13 @@ namespace InterfazGrafica {
 			this->buscarPorFechaToolStripMenuItem->Size = System::Drawing::Size(162, 22);
 			this->buscarPorFechaToolStripMenuItem->Text = L"Buscar por fecha";
 			// 
+			// salirToolStripMenuItem
+			// 
+			this->salirToolStripMenuItem->Name = L"salirToolStripMenuItem";
+			this->salirToolStripMenuItem->Size = System::Drawing::Size(41, 20);
+			this->salirToolStripMenuItem->Text = L"Salir";
+			this->salirToolStripMenuItem->Click += gcnew System::EventHandler(this, &VentanaADM::salirToolStripMenuItem_Click);
+			// 
 			// VentanaADM
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -253,6 +265,10 @@ private: System::Void Strip_ADM_ItemClicked(System::Object^ sender, System::Wind
 
 //Opcion Buscar Empleado llamo al formulario.
 private: System::Void buscasEmpleadoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	InterfazGrafica::FormularioBuscarEmpleado^ FormularioBuscarEmpleado = gcnew InterfazGrafica::FormularioBuscarEmpleado;
+	FormularioBuscarEmpleado->ShowDialog();
+
 }
 
 
@@ -264,6 +280,10 @@ private: System::Void agregarEmpleadoToolStripMenuItem_Click(System::Object^ sen
 }
 
 
+	//Boton "Salir" cierro el formulario.
+private: System::Void salirToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 
+	this->Close();	
+}
 };
 }

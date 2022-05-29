@@ -44,6 +44,9 @@
     <ClInclude Include="FormularioAgregarEmpleado.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="FormularioBuscarEmpleado.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinformsProjekt.cpp">
@@ -65,6 +68,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="FormularioAgregarEmpleado.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="FormularioBuscarEmpleado.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
