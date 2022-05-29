@@ -157,17 +157,19 @@ namespace InterfazGrafica {
 			// 
 			// Bton_Volver
 			// 
+			this->Bton_Volver->BackColor = System::Drawing::SystemColors::Control;
 			this->Bton_Volver->Location = System::Drawing::Point(159, 314);
 			this->Bton_Volver->Name = L"Bton_Volver";
 			this->Bton_Volver->Size = System::Drawing::Size(90, 33);
 			this->Bton_Volver->TabIndex = 10;
 			this->Bton_Volver->Text = L"Volver";
-			this->Bton_Volver->UseVisualStyleBackColor = true;
+			this->Bton_Volver->UseVisualStyleBackColor = false;
 			// 
 			// FormularioAgregarEmpleado
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(381, 370);
 			this->Controls->Add(this->Bton_Volver);
 			this->Controls->Add(this->Bton_Guardar);

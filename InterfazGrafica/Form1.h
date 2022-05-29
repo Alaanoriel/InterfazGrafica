@@ -92,6 +92,7 @@ namespace CppCLRWinformsProjekt {
 			this->Txt_Codigo->Location = System::Drawing::Point(148, 132);
 			this->Txt_Codigo->Multiline = true;
 			this->Txt_Codigo->Name = L"Txt_Codigo";
+			this->Txt_Codigo->PasswordChar = '*';
 			this->Txt_Codigo->ShortcutsEnabled = false;
 			this->Txt_Codigo->Size = System::Drawing::Size(245, 25);
 			this->Txt_Codigo->TabIndex = 1;

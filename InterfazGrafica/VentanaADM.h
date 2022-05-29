@@ -70,13 +70,12 @@ namespace InterfazGrafica {
 		{
 			this->Strip_ADM = (gcnew System::Windows::Forms::MenuStrip());
 			this->empleadosToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->productosToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ventasToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->buscasEmpleadoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->agregarEmpleadoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->bajaDeEmpleadoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->bajaTemporalToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->bajaTotalToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->productosToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->agregarNuevoProductoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->buscarProductoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->stockProductosToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -85,6 +84,7 @@ namespace InterfazGrafica {
 			this->bajaProductoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->bajaTemporalToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->bajaTotalToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ventasToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->buscarPorFechaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->Strip_ADM->SuspendLayout();
 			this->SuspendLayout();
@@ -112,34 +112,17 @@ namespace InterfazGrafica {
 			this->empleadosToolStripMenuItem->Size = System::Drawing::Size(77, 20);
 			this->empleadosToolStripMenuItem->Text = L"Empleados";
 			// 
-			// productosToolStripMenuItem
-			// 
-			this->productosToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
-				this->agregarNuevoProductoToolStripMenuItem,
-					this->buscarProductoToolStripMenuItem, this->stockProductosToolStripMenuItem, this->bajaProductoToolStripMenuItem
-			});
-			this->productosToolStripMenuItem->Name = L"productosToolStripMenuItem";
-			this->productosToolStripMenuItem->Size = System::Drawing::Size(73, 20);
-			this->productosToolStripMenuItem->Text = L"Productos";
-			// 
-			// ventasToolStripMenuItem
-			// 
-			this->ventasToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->buscarPorFechaToolStripMenuItem });
-			this->ventasToolStripMenuItem->Name = L"ventasToolStripMenuItem";
-			this->ventasToolStripMenuItem->Size = System::Drawing::Size(53, 20);
-			this->ventasToolStripMenuItem->Text = L"Ventas";
-			// 
 			// buscasEmpleadoToolStripMenuItem
 			// 
 			this->buscasEmpleadoToolStripMenuItem->Name = L"buscasEmpleadoToolStripMenuItem";
-			this->buscasEmpleadoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->buscasEmpleadoToolStripMenuItem->Size = System::Drawing::Size(172, 22);
 			this->buscasEmpleadoToolStripMenuItem->Text = L"Buscas empleado";
 			this->buscasEmpleadoToolStripMenuItem->Click += gcnew System::EventHandler(this, &VentanaADM::buscasEmpleadoToolStripMenuItem_Click);
 			// 
 			// agregarEmpleadoToolStripMenuItem
 			// 
 			this->agregarEmpleadoToolStripMenuItem->Name = L"agregarEmpleadoToolStripMenuItem";
-			this->agregarEmpleadoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->agregarEmpleadoToolStripMenuItem->Size = System::Drawing::Size(172, 22);
 			this->agregarEmpleadoToolStripMenuItem->Text = L"Agregar empleado";
 			this->agregarEmpleadoToolStripMenuItem->Click += gcnew System::EventHandler(this, &VentanaADM::agregarEmpleadoToolStripMenuItem_Click);
 			// 
@@ -150,20 +133,30 @@ namespace InterfazGrafica {
 					this->bajaTotalToolStripMenuItem
 			});
 			this->bajaDeEmpleadoToolStripMenuItem->Name = L"bajaDeEmpleadoToolStripMenuItem";
-			this->bajaDeEmpleadoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->bajaDeEmpleadoToolStripMenuItem->Size = System::Drawing::Size(172, 22);
 			this->bajaDeEmpleadoToolStripMenuItem->Text = L"Baja de empleado";
 			// 
 			// bajaTemporalToolStripMenuItem
 			// 
 			this->bajaTemporalToolStripMenuItem->Name = L"bajaTemporalToolStripMenuItem";
-			this->bajaTemporalToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->bajaTemporalToolStripMenuItem->Size = System::Drawing::Size(147, 22);
 			this->bajaTemporalToolStripMenuItem->Text = L"Baja temporal";
 			// 
 			// bajaTotalToolStripMenuItem
 			// 
 			this->bajaTotalToolStripMenuItem->Name = L"bajaTotalToolStripMenuItem";
-			this->bajaTotalToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->bajaTotalToolStripMenuItem->Size = System::Drawing::Size(147, 22);
 			this->bajaTotalToolStripMenuItem->Text = L"Baja total";
+			// 
+			// productosToolStripMenuItem
+			// 
+			this->productosToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+				this->agregarNuevoProductoToolStripMenuItem,
+					this->buscarProductoToolStripMenuItem, this->stockProductosToolStripMenuItem, this->bajaProductoToolStripMenuItem
+			});
+			this->productosToolStripMenuItem->Name = L"productosToolStripMenuItem";
+			this->productosToolStripMenuItem->Size = System::Drawing::Size(73, 20);
+			this->productosToolStripMenuItem->Text = L"Productos";
 			// 
 			// agregarNuevoProductoToolStripMenuItem
 			// 
@@ -190,13 +183,13 @@ namespace InterfazGrafica {
 			// verStockTotalToolStripMenuItem
 			// 
 			this->verStockTotalToolStripMenuItem->Name = L"verStockTotalToolStripMenuItem";
-			this->verStockTotalToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->verStockTotalToolStripMenuItem->Size = System::Drawing::Size(148, 22);
 			this->verStockTotalToolStripMenuItem->Text = L"Ver stock total";
 			// 
 			// agregarStockToolStripMenuItem
 			// 
 			this->agregarStockToolStripMenuItem->Name = L"agregarStockToolStripMenuItem";
-			this->agregarStockToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->agregarStockToolStripMenuItem->Size = System::Drawing::Size(148, 22);
 			this->agregarStockToolStripMenuItem->Text = L"Agregar stock";
 			// 
 			// bajaProductoToolStripMenuItem
@@ -212,25 +205,33 @@ namespace InterfazGrafica {
 			// bajaTemporalToolStripMenuItem1
 			// 
 			this->bajaTemporalToolStripMenuItem1->Name = L"bajaTemporalToolStripMenuItem1";
-			this->bajaTemporalToolStripMenuItem1->Size = System::Drawing::Size(180, 22);
+			this->bajaTemporalToolStripMenuItem1->Size = System::Drawing::Size(147, 22);
 			this->bajaTemporalToolStripMenuItem1->Text = L"Baja temporal";
 			// 
 			// bajaTotalToolStripMenuItem1
 			// 
 			this->bajaTotalToolStripMenuItem1->Name = L"bajaTotalToolStripMenuItem1";
-			this->bajaTotalToolStripMenuItem1->Size = System::Drawing::Size(180, 22);
+			this->bajaTotalToolStripMenuItem1->Size = System::Drawing::Size(147, 22);
 			this->bajaTotalToolStripMenuItem1->Text = L"Baja total";
+			// 
+			// ventasToolStripMenuItem
+			// 
+			this->ventasToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->buscarPorFechaToolStripMenuItem });
+			this->ventasToolStripMenuItem->Name = L"ventasToolStripMenuItem";
+			this->ventasToolStripMenuItem->Size = System::Drawing::Size(53, 20);
+			this->ventasToolStripMenuItem->Text = L"Ventas";
 			// 
 			// buscarPorFechaToolStripMenuItem
 			// 
 			this->buscarPorFechaToolStripMenuItem->Name = L"buscarPorFechaToolStripMenuItem";
-			this->buscarPorFechaToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->buscarPorFechaToolStripMenuItem->Size = System::Drawing::Size(162, 22);
 			this->buscarPorFechaToolStripMenuItem->Text = L"Buscar por fecha";
 			// 
 			// VentanaADM
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(838, 529);
 			this->Controls->Add(this->Strip_ADM);
 			this->MainMenuStrip = this->Strip_ADM;
