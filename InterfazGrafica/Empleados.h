@@ -8,6 +8,7 @@ private:
 	int dni_empleado;
 	char nombre_empleado[20];
 	char apellido_empleado[20];
+	char categoria_empleado[1];
 	bool estado_empleado;
 public:
 	//declaro gets
@@ -16,12 +17,14 @@ public:
 	char* getnombre_empleado() { return nombre_empleado; }
 	char* getapellido_empleado() { return apellido_empleado; }
 	bool getestado_empleado() { return estado_empleado; }
+	char* getcagetoria_empleado() { return categoria_empleado; }
 
 	//declaro sets
 	void setcodigo_empleado(int CodigoEmpleado) { codigo_empleado = CodigoEmpleado; }
 	void setdni_empleado(int Dni) { dni_empleado = Dni; }
 	void setnombre_empleado(char* NombreEmpleado) { strcpy(nombre_empleado, NombreEmpleado); }
 	void setapellido_empleado(char* ApellidoEmpleado) { strcpy(apellido_empleado, ApellidoEmpleado); }
+	void setcategoria_empleado(char* Categoria) { strcpy(categoria_empleado, Categoria); }
 	bool setestado_empleado(bool EstadoEmpleado) { estado_empleado = EstadoEmpleado; }
 
 	//grabo

@@ -1,4 +1,9 @@
 #pragma once
+#include <iostream>
+#include "Empleados.h"
+#include <string>
+using namespace std;
+
 
 namespace InterfazGrafica {
 
@@ -47,6 +52,8 @@ namespace InterfazGrafica {
 	private: System::Windows::Forms::Button^ Bton_Guardar;
 	private: System::Windows::Forms::Button^ Bton_Volver;
 	private: System::Windows::Forms::ComboBox^ Box_Categoria;
+
+
 
 	private:
 		/// <summary>
@@ -156,6 +163,7 @@ namespace InterfazGrafica {
 			this->Bton_Guardar->TabIndex = 9;
 			this->Bton_Guardar->Text = L"Guardar";
 			this->Bton_Guardar->UseVisualStyleBackColor = true;
+			this->Bton_Guardar->Click += gcnew System::EventHandler(this, &FormularioAgregarEmpleado::Bton_Guardar_Click);
 			// 
 			// Bton_Volver
 			// 
@@ -170,13 +178,12 @@ namespace InterfazGrafica {
 			// 
 			// Box_Categoria
 			// 
+			this->Box_Categoria->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->Box_Categoria->FormattingEnabled = true;
-			this->Box_Categoria->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Empleado", L"Gerente" });
 			this->Box_Categoria->Location = System::Drawing::Point(159, 280);
 			this->Box_Categoria->Name = L"Box_Categoria";
 			this->Box_Categoria->Size = System::Drawing::Size(197, 21);
 			this->Box_Categoria->TabIndex = 11;
-			this->Box_Categoria->Text = L"Seleccionar";
 			// 
 			// FormularioAgregarEmpleado
 			// 
@@ -198,6 +205,7 @@ namespace InterfazGrafica {
 			this->Controls->Add(this->CodigoEmpleado_Label);
 			this->Name = L"FormularioAgregarEmpleado";
 			this->Text = L"Agregar nuevo empleado";
+			this->Load += gcnew System::EventHandler(this, &FormularioAgregarEmpleado::FormularioAgregarEmpleado_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -211,5 +219,17 @@ namespace InterfazGrafica {
 	private: System::Void Bton_Volver_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
+
+
+	private: System::Void Bton_Guardar_Click(System::Object^ sender, System::EventArgs^ e) {
+		
+
+
+	}
+private: System::Void FormularioAgregarEmpleado_Load(System::Object^ sender, System::EventArgs^ e) {
+
+	Box_Categoria->Items->Add("Empleado");
+	Box_Categoria->Items->Add("Gerente");
+}
 };
 }
