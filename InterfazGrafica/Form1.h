@@ -90,6 +90,7 @@ namespace CppCLRWinformsProjekt {
 			// Txt_Codigo
 			// 
 			this->Txt_Codigo->Location = System::Drawing::Point(148, 132);
+			this->Txt_Codigo->MaxLength = 5;
 			this->Txt_Codigo->Multiline = true;
 			this->Txt_Codigo->Name = L"Txt_Codigo";
 			this->Txt_Codigo->PasswordChar = '*';
@@ -151,6 +152,7 @@ namespace CppCLRWinformsProjekt {
 			e->Handled = true;
 			return;
 		}
+
 
 	}
 

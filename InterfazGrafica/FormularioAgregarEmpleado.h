@@ -4,7 +4,6 @@
 #include <string>
 using namespace std;
 
-
 namespace InterfazGrafica {
 
 	using namespace System;
@@ -130,30 +129,38 @@ namespace InterfazGrafica {
 			// Txt_CodigoEmpleado
 			// 
 			this->Txt_CodigoEmpleado->Location = System::Drawing::Point(159, 44);
+			this->Txt_CodigoEmpleado->MaxLength = 5;
 			this->Txt_CodigoEmpleado->Name = L"Txt_CodigoEmpleado";
 			this->Txt_CodigoEmpleado->Size = System::Drawing::Size(197, 20);
 			this->Txt_CodigoEmpleado->TabIndex = 5;
+			this->Txt_CodigoEmpleado->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &FormularioAgregarEmpleado::Txt_CodigoEmpleado_KeyPress);
 			// 
 			// Txt_Nombre
 			// 
 			this->Txt_Nombre->Location = System::Drawing::Point(159, 106);
+			this->Txt_Nombre->MaxLength = 10;
 			this->Txt_Nombre->Name = L"Txt_Nombre";
 			this->Txt_Nombre->Size = System::Drawing::Size(197, 20);
 			this->Txt_Nombre->TabIndex = 6;
+			this->Txt_Nombre->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &FormularioAgregarEmpleado::Txt_Nombre_KeyPress);
 			// 
 			// Txt_Apellido
 			// 
 			this->Txt_Apellido->Location = System::Drawing::Point(159, 168);
+			this->Txt_Apellido->MaxLength = 10;
 			this->Txt_Apellido->Name = L"Txt_Apellido";
 			this->Txt_Apellido->Size = System::Drawing::Size(197, 20);
 			this->Txt_Apellido->TabIndex = 7;
+			this->Txt_Apellido->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &FormularioAgregarEmpleado::Txt_Apellido_KeyPress);
 			// 
 			// Txt_DNI
 			// 
 			this->Txt_DNI->Location = System::Drawing::Point(159, 229);
+			this->Txt_DNI->MaxLength = 8;
 			this->Txt_DNI->Name = L"Txt_DNI";
 			this->Txt_DNI->Size = System::Drawing::Size(197, 20);
 			this->Txt_DNI->TabIndex = 8;
+			this->Txt_DNI->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &FormularioAgregarEmpleado::Txt_DNI_KeyPress);
 			// 
 			// Bton_Guardar
 			// 
@@ -230,6 +237,39 @@ private: System::Void FormularioAgregarEmpleado_Load(System::Object^ sender, Sys
 
 	Box_Categoria->Items->Add("Empleado");
 	Box_Categoria->Items->Add("Gerente");
+}
+private: System::Void Txt_CodigoEmpleado_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+
+	if ((e->KeyChar >= 32 && e->KeyChar <= 47) || (e->KeyChar >= 58 && e->KeyChar <= 255))
+	{
+		e->Handled = true;
+		return;
+	}
+}
+private: System::Void Txt_DNI_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+
+	if ((e->KeyChar >= 32 && e->KeyChar <= 47) || (e->KeyChar >= 58 && e->KeyChar <= 255))
+	{
+		e->Handled = true;
+		return;
+	}
+}
+private: System::Void Txt_Nombre_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+	
+	if ((e->KeyChar >= 32 && e->KeyChar <= 64) || (e->KeyChar >= 91 && e->KeyChar <= 96) || (e->KeyChar >= 123 && e->KeyChar <= 255))
+	{
+		e->Handled = true;
+		return;
+	}
+
+}
+private: System::Void Txt_Apellido_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+	
+	if ((e->KeyChar >= 32 && e->KeyChar <= 64) || (e->KeyChar >= 91 && e->KeyChar <= 96) || (e->KeyChar >= 123 && e->KeyChar <= 255))
+	{
+		e->Handled = true;
+		return;
+	}
 }
 };
 }
