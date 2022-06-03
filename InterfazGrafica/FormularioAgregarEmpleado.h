@@ -229,9 +229,43 @@ namespace InterfazGrafica {
 
 
 	private: System::Void Bton_Guardar_Click(System::Object^ sender, System::EventArgs^ e) {
+		Empleado obj;
 		
+		int codigo = Int64::Parse(Txt_CodigoEmpleado->Text);
+		obj.setcodigo_empleado(codigo);
 
+		String^ type = Txt_Nombre->Text->ToString();
+		char V[50] = { 0 };
+		if (type->Length < sizeof(V))
+			printf(V, "%s", type);
+		std::string Nombre(V);
+		obj.setnombre_empleado(Nombre);
 
+		String^ type2 = Txt_Apellido->Text->ToString();
+		char V2[50] = { 0 };
+		if (type->Length < sizeof(V2))
+			printf(V2, "%s", type2);
+		std::string Apellido(V2);
+		obj.setnombre_empleado(Apellido);
+
+		int dni = Int64::Parse(Txt_DNI->Text);
+		obj.setcodigo_empleado(dni);
+
+		String^ type3 = Box_Categoria->SelectedItem->ToString();
+		char V3[50] = { 0 };
+		if (type->Length < sizeof(V3))
+			printf(V3, "%s", type3);
+		std::string Categoria(V3);
+		obj.setcategoria_empleado(Categoria);
+
+		if (Txt_CodigoEmpleado->Text == "" || Txt_Nombre->Text == "" || Txt_Apellido->Text =="" || Txt_DNI->Text == "" || Box_Categoria->SelectedItem=="")
+		{
+			MessageBox::Show("Llene los campos", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+		else obj.GrabarEmpleado();
+		MessageBox::Show("Empleado agreado","", MessageBoxButtons::OK);
+		return;
 	}
 private: System::Void FormularioAgregarEmpleado_Load(System::Object^ sender, System::EventArgs^ e) {
 

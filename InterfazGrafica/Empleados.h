@@ -6,25 +6,25 @@ class Empleado {
 private:
 	int codigo_empleado;
 	int dni_empleado;
-	char nombre_empleado[20];
-	char apellido_empleado[20];
-	char categoria_empleado[1];
+	string nombre_empleado;
+	string apellido_empleado;
+	string categoria_empleado;
 	bool estado_empleado;
 public:
 	//declaro gets
 	int getcodigo_empleado() { return codigo_empleado; }
 	int getdni_empleado() { return dni_empleado; }
-	char* getnombre_empleado() { return nombre_empleado; }
-	char* getapellido_empleado() { return apellido_empleado; }
+	string getnombre_empleado() { return nombre_empleado; }
+	string getapellido_empleado() { return apellido_empleado; }
 	bool getestado_empleado() { return estado_empleado; }
-	char* getcagetoria_empleado() { return categoria_empleado; }
+	string getcagetoria_empleado() { return categoria_empleado; }
 
 	//declaro sets
 	void setcodigo_empleado(int CodigoEmpleado) { codigo_empleado = CodigoEmpleado; }
 	void setdni_empleado(int Dni) { dni_empleado = Dni; }
-	void setnombre_empleado(char* NombreEmpleado) { strcpy(nombre_empleado, NombreEmpleado); }
-	void setapellido_empleado(char* ApellidoEmpleado) { strcpy(apellido_empleado, ApellidoEmpleado); }
-	void setcategoria_empleado(char* Categoria) { strcpy(categoria_empleado, Categoria); }
+	void setnombre_empleado(string NombreEmpleado) { nombre_empleado=NombreEmpleado; }
+	void setapellido_empleado(string ApellidoEmpleado) { apellido_empleado=ApellidoEmpleado; }
+	void setcategoria_empleado(string Categoria) { categoria_empleado = Categoria; }
 	bool setestado_empleado(bool EstadoEmpleado) { estado_empleado = EstadoEmpleado; }
 
 	//grabo
