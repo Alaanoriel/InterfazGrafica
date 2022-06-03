@@ -235,16 +235,16 @@ namespace InterfazGrafica {
 		obj.setcodigo_empleado(codigo);
 
 		String^ type = Txt_Nombre->Text->ToString();
-		char V[50] = { 0 };
+		char V[10] = { 0 };
 		if (type->Length < sizeof(V))
 			printf(V, "%s", type);
 		std::string Nombre(V);
 		obj.setnombre_empleado(Nombre);
 
 		String^ type2 = Txt_Apellido->Text->ToString();
-		char V2[50] = { 0 };
-		if (type->Length < sizeof(V2))
-			printf(V2, "%s", type2);
+		char V2[10] = { 0 };
+		//if (type->Length < sizeof(V2))
+			//printf(V2, "%s", type2);
 		std::string Apellido(V2);
 		obj.setnombre_empleado(Apellido);
 
@@ -252,7 +252,7 @@ namespace InterfazGrafica {
 		obj.setcodigo_empleado(dni);
 
 		String^ type3 = Box_Categoria->SelectedItem->ToString();
-		char V3[50] = { 0 };
+		char V3[10] = { 0 };
 		if (type->Length < sizeof(V3))
 			printf(V3, "%s", type3);
 		std::string Categoria(V3);
@@ -264,7 +264,7 @@ namespace InterfazGrafica {
 			return;
 		}
 		else obj.GrabarEmpleado();
-		MessageBox::Show("Empleado agreado","", MessageBoxButtons::OK);
+		MessageBox::Show("Empleado agreado","Completado", MessageBoxButtons::OK, MessageBoxIcon::Information);
 		return;
 	}
 private: System::Void FormularioAgregarEmpleado_Load(System::Object^ sender, System::EventArgs^ e) {
