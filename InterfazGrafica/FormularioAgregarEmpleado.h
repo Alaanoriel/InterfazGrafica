@@ -258,12 +258,7 @@ namespace InterfazGrafica {
 		std::string Categoria(V3);
 		obj.setcategoria_empleado(Categoria);
 
-		if (Txt_CodigoEmpleado->Text == "" || Txt_Nombre->Text == "" || Txt_Apellido->Text =="" || Txt_DNI->Text == "" || Box_Categoria->SelectedItem=="")
-		{
-			MessageBox::Show("Llene los campos", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
-			return;
-		}
-		else obj.GrabarEmpleado();
+		obj.GrabarEmpleado();
 		MessageBox::Show("Empleado agreado","Completado", MessageBoxButtons::OK, MessageBoxIcon::Information);
 		return;
 	}
