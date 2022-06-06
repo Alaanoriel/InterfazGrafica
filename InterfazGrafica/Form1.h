@@ -189,12 +189,17 @@ namespace CppCLRWinformsProjekt {
 		if (Txt_Codigo->Text == "")
 		{
 			MessageBox::Show("Ingrese algun digito", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
-			return;
 		}
 
 		//Como el textbox es tipo string con Int64::Parse lo pasamos a una variable tipo int, ya que solo queremos numeros
 
 		int CodigoIngresado = Int64::Parse(Txt_Codigo->Text);
+
+		if (CodigoIngresado == 123)
+		{
+			Ventana();
+		}
+
 
 		while (obj.LeerDiscoEmpleado(Posicion++)) {
 
@@ -202,18 +207,12 @@ namespace CppCLRWinformsProjekt {
 			{
 				Ventana();
 			}
-
-			else if(CodigoIngresado != obj.getcodigo_empleado())
-			{
-				MessageBox::Show("Codigo Invalido", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
-			}
-			return;
+		
 		}
-
-		 if (CodigoIngresado == 123)
-		{
-			 Ventana();
-		}
+		
+		MessageBox::Show("Codigo Invalido", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		
+		
 
 	}
 

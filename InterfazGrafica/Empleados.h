@@ -31,7 +31,7 @@ public:
 	bool GrabarEmpleado()
 	{
 		FILE* Empleado;
-		Empleado = fopen("Empleados.dat", "ab");
+		Empleado = fopen("Empleados.dat", "rb");
 		if (Empleado == NULL)
 		{
 			return false;
@@ -44,16 +44,15 @@ public:
 	}
 
 	//lee
-	int LeerDiscoEmpleado(int Posicion)
+	bool LeerDiscoEmpleado(int Posicion)
 	{
-		int x;
+		bool x;
 		FILE* Empleado;
 		Empleado = fopen("Empleados.dat", "rb");
 		if (Empleado == NULL)
 		{
 			return 0;
 		}
-
 		fseek(Empleado, Posicion * sizeof * this, 0);
 		x = fread(this, sizeof * this, 1, Empleado);
 		fclose(Empleado);
