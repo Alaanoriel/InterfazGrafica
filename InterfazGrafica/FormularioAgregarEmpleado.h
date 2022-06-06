@@ -249,7 +249,7 @@ namespace InterfazGrafica {
 		obj.setapellido_empleado(MarshalCadena(Apellido));
 
 		int dni = Int64::Parse(Txt_DNI->Text);
-		obj.setcodigo_empleado(dni);
+		obj.setdni_empleado(dni);
 
 		System::String^ Seleccion = Box_Categoria->SelectedItem->ToString();
 		obj.setcategoria_empleado(MarshalCadena(Seleccion));

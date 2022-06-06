@@ -186,47 +186,33 @@ namespace CppCLRWinformsProjekt {
 		int Posicion = 0;
 
 		//En caso de que el texto este vacio, saldra una ventana pidiendo que se ingrese algun codigo
-		if(Txt_Codigo->Text == "")
+		if (Txt_Codigo->Text == "")
 		{
-			MessageBox::Show("Ingrese algun digito","ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show("Ingrese algun digito", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			return;
 		}
 
 		//Como el textbox es tipo string con Int64::Parse lo pasamos a una variable tipo int, ya que solo queremos numeros
-		
+
 		int CodigoIngresado = Int64::Parse(Txt_Codigo->Text);
 
 		while (obj.LeerDiscoEmpleado(Posicion++)) {
 
-			if(CodigoIngresado == obj.getcodigo_empleado())
+			if (CodigoIngresado == obj.getcodigo_empleado())
 			{
 				Ventana();
 			}
 
+			else if(CodigoIngresado != obj.getcodigo_empleado())
+			{
+				MessageBox::Show("Codigo Invalido", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+			return;
 		}
-
 
 		 if (CodigoIngresado == 123)
 		{
-			//Creamos un objeto del formulario que vamos a abrir e invocamos a su metodo constructor.
-			InterfazGrafica::VentanaADM^ VentanaADM = gcnew InterfazGrafica::VentanaADM();
-
-			//Ocultamos el formulario anterior, llamamos al objeto y ponemos su visibilidad en false.
-			this->Visible = false;
-
-
-			//Ahora los mostramos
-			VentanaADM->ShowDialog();
-			//Cuando abra el segundo formulario el anterior se oculta
-			this->Visible = true;
-
-		}
-		
-
-		else if(CodigoIngresado != 123)
-		{
-			MessageBox::Show("Codigo Invalido", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		
+			 Ventana();
 		}
 
 	}
