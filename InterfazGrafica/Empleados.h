@@ -31,7 +31,7 @@ public:
 	bool GrabarEmpleado()
 	{
 		FILE* Empleado;
-		Empleado = fopen("Empleados.dat", "rb");
+		Empleado = fopen("Empleados.dat", "ab");
 		if (Empleado == NULL)
 		{
 			return false;
