@@ -1,7 +1,9 @@
 #pragma once
 #include <iostream>
+#include <msclr\marshal_cppstd.h>
 #include "Empleados.h"
 #include <string>
+#include <cstring>
 using namespace std;
 
 namespace InterfazGrafica {
@@ -25,6 +27,12 @@ namespace InterfazGrafica {
 			//
 			//TODO: agregar código de constructor aquí
 			//
+		}
+
+		string MarshalCadena(System::String^ transformar)
+		{
+			string cad = msclr::interop::marshal_as<string>(transformar);
+			return cad;
 		}
 
 	protected:
@@ -234,29 +242,18 @@ namespace InterfazGrafica {
 		int codigo = Int64::Parse(Txt_CodigoEmpleado->Text);
 		obj.setcodigo_empleado(codigo);
 
-		String^ type = Txt_Nombre->Text->ToString();
-		char V[10] = { 0 };
-		if (type->Length < sizeof(V))
-			printf(V, "%s", type);
-		std::string Nombre(V);
-		obj.setnombre_empleado(Nombre);
+		System::String^ Nombre = Txt_Nombre->Text;
+		obj.setnombre_empleado(MarshalCadena(Nombre));
 
-		String^ type2 = Txt_Apellido->Text->ToString();
-		char V2[10] = { 0 };
-		//if (type->Length < sizeof(V2))
-			//printf(V2, "%s", type2);
-		std::string Apellido(V2);
-		obj.setnombre_empleado(Apellido);
+		System::String^ Apellido = Txt_Apellido->Text;
+		obj.setapellido_empleado(MarshalCadena(Apellido));
 
 		int dni = Int64::Parse(Txt_DNI->Text);
 		obj.setcodigo_empleado(dni);
 
-		String^ type3 = Box_Categoria->SelectedItem->ToString();
-		char V3[10] = { 0 };
-		if (type->Length < sizeof(V3))
-			printf(V3, "%s", type3);
-		std::string Categoria(V3);
-		obj.setcategoria_empleado(Categoria);
+		System::String^ Seleccion = Box_Categoria->SelectedItem->ToString();
+		obj.setcategoria_empleado(MarshalCadena(Seleccion));
+
 
 		obj.GrabarEmpleado();
 		MessageBox::Show("Empleado agreado","Completado", MessageBoxButtons::OK, MessageBoxIcon::Information);

@@ -1,4 +1,6 @@
 #include "pch.h"
+#include <msclr\marshal_cppstd.h>
+#include <iostream>
 using namespace std;
 using namespace System;
 
