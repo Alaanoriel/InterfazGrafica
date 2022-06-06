@@ -31,6 +31,23 @@ namespace CppCLRWinformsProjekt {
 			//
 		}
 
+
+		Void Ventana() {
+
+			//Creamos un objeto del formulario que vamos a abrir e invocamos a su metodo constructor.
+			InterfazGrafica::VentanaADM^ VentanaADM = gcnew InterfazGrafica::VentanaADM();
+
+			//Ocultamos el formulario anterior, llamamos al objeto y ponemos su visibilidad en false.
+			this->Visible = false;
+
+
+			//Ahora los mostramos
+			VentanaADM->ShowDialog();
+			//Cuando abra el segundo formulario el anterior se oculta
+			this->Visible = true;
+
+		}
+
 	protected:
 		/// <summary>
 		/// Verwendete Ressourcen bereinigen.
@@ -165,6 +182,8 @@ namespace CppCLRWinformsProjekt {
 	// Boton "Administrador" Menu inicio Login
 	private: System::Void Bton_Login_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		Empleado obj;
+		int Posicion = 0;
 
 		//En caso de que el texto este vacio, saldra una ventana pidiendo que se ingrese algun codigo
 		if(Txt_Codigo->Text == "")
@@ -174,10 +193,20 @@ namespace CppCLRWinformsProjekt {
 		}
 
 		//Como el textbox es tipo string con Int64::Parse lo pasamos a una variable tipo int, ya que solo queremos numeros
+		
 		int CodigoIngresado = Int64::Parse(Txt_Codigo->Text);
 
+		while (obj.LeerDiscoEmpleado(Posicion++)) {
 
-		if (CodigoIngresado == 123)
+			if(CodigoIngresado == obj.getcodigo_empleado())
+			{
+				Ventana();
+			}
+
+		}
+
+
+		 if (CodigoIngresado == 123)
 		{
 			//Creamos un objeto del formulario que vamos a abrir e invocamos a su metodo constructor.
 			InterfazGrafica::VentanaADM^ VentanaADM = gcnew InterfazGrafica::VentanaADM();
