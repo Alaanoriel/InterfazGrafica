@@ -120,6 +120,8 @@ namespace InterfazGrafica {
 			// Boton_EmpleadosOPC
 			// 
 			this->Boton_EmpleadosOPC->AccessibleRole = System::Windows::Forms::AccessibleRole::None;
+			this->Boton_EmpleadosOPC->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(66)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
 			this->Boton_EmpleadosOPC->Dock = System::Windows::Forms::DockStyle::Top;
 			this->Boton_EmpleadosOPC->FlatAppearance->BorderSize = 0;
 			this->Boton_EmpleadosOPC->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -131,12 +133,14 @@ namespace InterfazGrafica {
 			this->Boton_EmpleadosOPC->Size = System::Drawing::Size(194, 48);
 			this->Boton_EmpleadosOPC->TabIndex = 1;
 			this->Boton_EmpleadosOPC->Text = L"Empleados";
-			this->Boton_EmpleadosOPC->UseVisualStyleBackColor = true;
+			this->Boton_EmpleadosOPC->UseVisualStyleBackColor = false;
 			this->Boton_EmpleadosOPC->Click += gcnew System::EventHandler(this, &VentanaADM::Boton_EmpleadosOPC_Click);
 			// 
 			// Boton_Inicio
 			// 
 			this->Boton_Inicio->AccessibleRole = System::Windows::Forms::AccessibleRole::None;
+			this->Boton_Inicio->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(55)),
+				static_cast<System::Int32>(static_cast<System::Byte>(79)));
 			this->Boton_Inicio->Dock = System::Windows::Forms::DockStyle::Top;
 			this->Boton_Inicio->FlatAppearance->BorderSize = 0;
 			this->Boton_Inicio->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -148,7 +152,7 @@ namespace InterfazGrafica {
 			this->Boton_Inicio->Size = System::Drawing::Size(194, 48);
 			this->Boton_Inicio->TabIndex = 0;
 			this->Boton_Inicio->Text = L"Inicio";
-			this->Boton_Inicio->UseVisualStyleBackColor = true;
+			this->Boton_Inicio->UseVisualStyleBackColor = false;
 			this->Boton_Inicio->Click += gcnew System::EventHandler(this, &VentanaADM::Boton_Inicio_Click);
 			// 
 			// Panel_MARGENTOP
@@ -173,6 +177,8 @@ namespace InterfazGrafica {
 			// Boton_Productos
 			// 
 			this->Boton_Productos->AccessibleRole = System::Windows::Forms::AccessibleRole::None;
+			this->Boton_Productos->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(55)),
+				static_cast<System::Int32>(static_cast<System::Byte>(79)));
 			this->Boton_Productos->Dock = System::Windows::Forms::DockStyle::Top;
 			this->Boton_Productos->FlatAppearance->BorderSize = 0;
 			this->Boton_Productos->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -184,11 +190,13 @@ namespace InterfazGrafica {
 			this->Boton_Productos->Size = System::Drawing::Size(194, 48);
 			this->Boton_Productos->TabIndex = 2;
 			this->Boton_Productos->Text = L"Productos";
-			this->Boton_Productos->UseVisualStyleBackColor = true;
+			this->Boton_Productos->UseVisualStyleBackColor = false;
 			// 
 			// Boton_Stock
 			// 
 			this->Boton_Stock->AccessibleRole = System::Windows::Forms::AccessibleRole::None;
+			this->Boton_Stock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(55)),
+				static_cast<System::Int32>(static_cast<System::Byte>(79)));
 			this->Boton_Stock->Dock = System::Windows::Forms::DockStyle::Top;
 			this->Boton_Stock->FlatAppearance->BorderSize = 0;
 			this->Boton_Stock->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -200,11 +208,14 @@ namespace InterfazGrafica {
 			this->Boton_Stock->Size = System::Drawing::Size(194, 48);
 			this->Boton_Stock->TabIndex = 3;
 			this->Boton_Stock->Text = L"Stock";
-			this->Boton_Stock->UseVisualStyleBackColor = true;
+			this->Boton_Stock->UseVisualStyleBackColor = false;
+			this->Boton_Stock->Click += gcnew System::EventHandler(this, &VentanaADM::Boton_Stock_Click);
 			// 
 			// Boton_Ventas
 			// 
 			this->Boton_Ventas->AccessibleRole = System::Windows::Forms::AccessibleRole::None;
+			this->Boton_Ventas->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(55)),
+				static_cast<System::Int32>(static_cast<System::Byte>(79)));
 			this->Boton_Ventas->Dock = System::Windows::Forms::DockStyle::Top;
 			this->Boton_Ventas->FlatAppearance->BorderSize = 0;
 			this->Boton_Ventas->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -216,11 +227,14 @@ namespace InterfazGrafica {
 			this->Boton_Ventas->Size = System::Drawing::Size(194, 48);
 			this->Boton_Ventas->TabIndex = 4;
 			this->Boton_Ventas->Text = L"Ventas";
-			this->Boton_Ventas->UseVisualStyleBackColor = true;
+			this->Boton_Ventas->UseVisualStyleBackColor = false;
+			this->Boton_Ventas->Click += gcnew System::EventHandler(this, &VentanaADM::Boton_Ventas_Click);
 			// 
 			// Boton_Salir
 			// 
 			this->Boton_Salir->AccessibleRole = System::Windows::Forms::AccessibleRole::None;
+			this->Boton_Salir->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(55)),
+				static_cast<System::Int32>(static_cast<System::Byte>(79)));
 			this->Boton_Salir->Dock = System::Windows::Forms::DockStyle::Top;
 			this->Boton_Salir->FlatAppearance->BorderSize = 0;
 			this->Boton_Salir->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -232,7 +246,7 @@ namespace InterfazGrafica {
 			this->Boton_Salir->Size = System::Drawing::Size(194, 48);
 			this->Boton_Salir->TabIndex = 5;
 			this->Boton_Salir->Text = L"Salir";
-			this->Boton_Salir->UseVisualStyleBackColor = true;
+			this->Boton_Salir->UseVisualStyleBackColor = false;
 			// 
 			// VentanaADM
 			// 
@@ -280,6 +294,10 @@ private: System::Void Boton_EmpleadosOPC_Click(System::Object^ sender, System::E
 
 	this->AbrirFormulario(gcnew InterfazGrafica::VentanaEmpleados());
 
+}
+private: System::Void Boton_Ventas_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void Boton_Stock_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
