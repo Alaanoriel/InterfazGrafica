@@ -31,7 +31,7 @@ public:
 	bool GrabarEmpleado()
 	{
 		FILE* Empleado;
-		Empleado = fopen("Empleados.dat", "ab");
+		Empleado = fopen("Datos.txt", "ab");
 		if (Empleado == NULL)
 		{
 			return false;
@@ -48,7 +48,7 @@ public:
 	{
 		bool x;
 		FILE* Empleado;
-		Empleado = fopen("Empleados.dat", "rb");
+		Empleado = fopen("Datos.txt", "rb");
 		if (Empleado == NULL)
 		{
 			return 0;
@@ -64,7 +64,7 @@ public:
 		int i = 0;
 		int pos = 0;
 		FILE* Empleado;
-		Empleado = fopen("Empleados.dat", "rb");
+		Empleado = fopen("Datos.txt", "rb");
 		if (Empleado == NULL) {
 			return -1;
 		}

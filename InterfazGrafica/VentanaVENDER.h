@@ -10,12 +10,12 @@ namespace InterfazGrafica {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Resumen de VentanaEmpleados
+	/// Resumen de VentanaVENDER
 	/// </summary>
-	public ref class VentanaEmpleados : public System::Windows::Forms::Form
+	public ref class VentanaVENDER : public System::Windows::Forms::Form
 	{
 	public:
-		VentanaEmpleados(void)
+		VentanaVENDER(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace InterfazGrafica {
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.
 		/// </summary>
-		~VentanaEmpleados()
+		~VentanaVENDER()
 		{
 			if (components)
 			{
@@ -56,24 +56,25 @@ namespace InterfazGrafica {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->label1->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label1->Location = System::Drawing::Point(224, 123);
+			this->label1->BackColor = System::Drawing::SystemColors::Control;
+			this->label1->Location = System::Drawing::Point(236, 120);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(116, 13);
+			this->label1->Size = System::Drawing::Size(201, 13);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"VETANAEMPLEADOS";
+			this->label1->Text = L"VETANA PARA VENDER PRODUCTOS";
 			// 
-			// VentanaEmpleados
+			// VentanaVENDER
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->ClientSize = System::Drawing::Size(677, 459);
+			this->ClientSize = System::Drawing::Size(661, 420);
 			this->Controls->Add(this->label1);
+			this->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Name = L"VentanaEmpleados";
-			this->Text = L"VentanaEmpleados";
+			this->Name = L"VentanaVENDER";
+			this->Text = L"VentanaVENDER";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

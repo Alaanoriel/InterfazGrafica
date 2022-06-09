@@ -1,6 +1,8 @@
 #pragma once
 #include "FormularioAgregarEmpleado.h"
 #include "FormularioBuscarEmpleado.h"
+#include "VentanaEmpleados.h"
+#include "VentanaVENDER.h"
 
 namespace InterfazGrafica {
 
@@ -36,28 +38,42 @@ namespace InterfazGrafica {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::MenuStrip^ Strip_ADM;
+	private: System::Windows::Forms::Panel^ Panel_Izquierdo;
 	protected:
-	private: System::Windows::Forms::ToolStripMenuItem^ empleadosToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ buscasEmpleadoToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ agregarEmpleadoToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ bajaDeEmpleadoToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ bajaTemporalToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ bajaTotalToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ productosToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ agregarNuevoProductoToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ buscarProductoToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ stockProductosToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ verStockTotalToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ agregarStockToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ bajaProductoToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ bajaTemporalToolStripMenuItem1;
-	private: System::Windows::Forms::ToolStripMenuItem^ bajaTotalToolStripMenuItem1;
-	private: System::Windows::Forms::ToolStripMenuItem^ ventasToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ buscarPorFechaToolStripMenuItem;
+
+	private: System::Windows::Forms::Panel^ Panel_MARGENTOP;
+
+	private: System::Windows::Forms::Panel^ Panel_MID;
+	private: System::Windows::Forms::Button^ Boton_Inicio;
+	private: System::Windows::Forms::Button^ Boton_EmpleadosOPC;
+	private: System::Windows::Forms::Button^ Boton_Salir;
+	private: System::Windows::Forms::Button^ Boton_Ventas;
+	private: System::Windows::Forms::Button^ Boton_Stock;
+	private: System::Windows::Forms::Button^ Boton_Productos;
 
 
-	private: System::Windows::Forms::ToolStripMenuItem^ salirToolStripMenuItem;
+
+	protected:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	private:
 		/// <summary>
@@ -72,218 +88,198 @@ namespace InterfazGrafica {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->Strip_ADM = (gcnew System::Windows::Forms::MenuStrip());
-			this->empleadosToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->buscasEmpleadoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->agregarEmpleadoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->bajaDeEmpleadoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->bajaTemporalToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->bajaTotalToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->productosToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->agregarNuevoProductoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->buscarProductoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->stockProductosToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->verStockTotalToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->agregarStockToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->bajaProductoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->bajaTemporalToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->bajaTotalToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ventasToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->buscarPorFechaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->salirToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->Strip_ADM->SuspendLayout();
+			this->Panel_Izquierdo = (gcnew System::Windows::Forms::Panel());
+			this->Boton_EmpleadosOPC = (gcnew System::Windows::Forms::Button());
+			this->Boton_Inicio = (gcnew System::Windows::Forms::Button());
+			this->Panel_MARGENTOP = (gcnew System::Windows::Forms::Panel());
+			this->Panel_MID = (gcnew System::Windows::Forms::Panel());
+			this->Boton_Productos = (gcnew System::Windows::Forms::Button());
+			this->Boton_Stock = (gcnew System::Windows::Forms::Button());
+			this->Boton_Ventas = (gcnew System::Windows::Forms::Button());
+			this->Boton_Salir = (gcnew System::Windows::Forms::Button());
+			this->Panel_Izquierdo->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// Strip_ADM
+			// Panel_Izquierdo
 			// 
-			this->Strip_ADM->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
-				this->empleadosToolStripMenuItem,
-					this->productosToolStripMenuItem, this->ventasToolStripMenuItem, this->salirToolStripMenuItem
-			});
-			this->Strip_ADM->Location = System::Drawing::Point(0, 0);
-			this->Strip_ADM->Name = L"Strip_ADM";
-			this->Strip_ADM->Size = System::Drawing::Size(838, 24);
-			this->Strip_ADM->TabIndex = 0;
-			this->Strip_ADM->Text = L"menuStrip1";
-			this->Strip_ADM->ItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &VentanaADM::Strip_ADM_ItemClicked);
+			this->Panel_Izquierdo->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(55)),
+				static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->Panel_Izquierdo->Controls->Add(this->Boton_Salir);
+			this->Panel_Izquierdo->Controls->Add(this->Boton_Ventas);
+			this->Panel_Izquierdo->Controls->Add(this->Boton_Stock);
+			this->Panel_Izquierdo->Controls->Add(this->Boton_Productos);
+			this->Panel_Izquierdo->Controls->Add(this->Boton_EmpleadosOPC);
+			this->Panel_Izquierdo->Controls->Add(this->Boton_Inicio);
+			this->Panel_Izquierdo->Controls->Add(this->Panel_MARGENTOP);
+			this->Panel_Izquierdo->Dock = System::Windows::Forms::DockStyle::Left;
+			this->Panel_Izquierdo->Location = System::Drawing::Point(0, 0);
+			this->Panel_Izquierdo->Name = L"Panel_Izquierdo";
+			this->Panel_Izquierdo->Size = System::Drawing::Size(194, 459);
+			this->Panel_Izquierdo->TabIndex = 0;
 			// 
-			// empleadosToolStripMenuItem
+			// Boton_EmpleadosOPC
 			// 
-			this->empleadosToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->buscasEmpleadoToolStripMenuItem,
-					this->agregarEmpleadoToolStripMenuItem, this->bajaDeEmpleadoToolStripMenuItem
-			});
-			this->empleadosToolStripMenuItem->Name = L"empleadosToolStripMenuItem";
-			this->empleadosToolStripMenuItem->Size = System::Drawing::Size(77, 20);
-			this->empleadosToolStripMenuItem->Text = L"Empleados";
+			this->Boton_EmpleadosOPC->AccessibleRole = System::Windows::Forms::AccessibleRole::None;
+			this->Boton_EmpleadosOPC->Dock = System::Windows::Forms::DockStyle::Top;
+			this->Boton_EmpleadosOPC->FlatAppearance->BorderSize = 0;
+			this->Boton_EmpleadosOPC->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Boton_EmpleadosOPC->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Boton_EmpleadosOPC->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->Boton_EmpleadosOPC->Location = System::Drawing::Point(0, 140);
+			this->Boton_EmpleadosOPC->Name = L"Boton_EmpleadosOPC";
+			this->Boton_EmpleadosOPC->Size = System::Drawing::Size(194, 48);
+			this->Boton_EmpleadosOPC->TabIndex = 1;
+			this->Boton_EmpleadosOPC->Text = L"Empleados";
+			this->Boton_EmpleadosOPC->UseVisualStyleBackColor = true;
+			this->Boton_EmpleadosOPC->Click += gcnew System::EventHandler(this, &VentanaADM::Boton_EmpleadosOPC_Click);
 			// 
-			// buscasEmpleadoToolStripMenuItem
+			// Boton_Inicio
 			// 
-			this->buscasEmpleadoToolStripMenuItem->Name = L"buscasEmpleadoToolStripMenuItem";
-			this->buscasEmpleadoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->buscasEmpleadoToolStripMenuItem->Text = L"Buscar empleado";
-			this->buscasEmpleadoToolStripMenuItem->Click += gcnew System::EventHandler(this, &VentanaADM::buscasEmpleadoToolStripMenuItem_Click);
+			this->Boton_Inicio->AccessibleRole = System::Windows::Forms::AccessibleRole::None;
+			this->Boton_Inicio->Dock = System::Windows::Forms::DockStyle::Top;
+			this->Boton_Inicio->FlatAppearance->BorderSize = 0;
+			this->Boton_Inicio->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Boton_Inicio->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Boton_Inicio->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->Boton_Inicio->Location = System::Drawing::Point(0, 92);
+			this->Boton_Inicio->Name = L"Boton_Inicio";
+			this->Boton_Inicio->Size = System::Drawing::Size(194, 48);
+			this->Boton_Inicio->TabIndex = 0;
+			this->Boton_Inicio->Text = L"Inicio";
+			this->Boton_Inicio->UseVisualStyleBackColor = true;
+			this->Boton_Inicio->Click += gcnew System::EventHandler(this, &VentanaADM::Boton_Inicio_Click);
 			// 
-			// agregarEmpleadoToolStripMenuItem
+			// Panel_MARGENTOP
 			// 
-			this->agregarEmpleadoToolStripMenuItem->Name = L"agregarEmpleadoToolStripMenuItem";
-			this->agregarEmpleadoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->agregarEmpleadoToolStripMenuItem->Text = L"Agregar empleado";
-			this->agregarEmpleadoToolStripMenuItem->Click += gcnew System::EventHandler(this, &VentanaADM::agregarEmpleadoToolStripMenuItem_Click);
+			this->Panel_MARGENTOP->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(55)),
+				static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->Panel_MARGENTOP->Dock = System::Windows::Forms::DockStyle::Top;
+			this->Panel_MARGENTOP->Location = System::Drawing::Point(0, 0);
+			this->Panel_MARGENTOP->Name = L"Panel_MARGENTOP";
+			this->Panel_MARGENTOP->Size = System::Drawing::Size(194, 92);
+			this->Panel_MARGENTOP->TabIndex = 0;
 			// 
-			// bajaDeEmpleadoToolStripMenuItem
+			// Panel_MID
 			// 
-			this->bajaDeEmpleadoToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->bajaTemporalToolStripMenuItem,
-					this->bajaTotalToolStripMenuItem
-			});
-			this->bajaDeEmpleadoToolStripMenuItem->Name = L"bajaDeEmpleadoToolStripMenuItem";
-			this->bajaDeEmpleadoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->bajaDeEmpleadoToolStripMenuItem->Text = L"Baja de empleado";
+			this->Panel_MID->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->Panel_MID->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->Panel_MID->Location = System::Drawing::Point(194, 0);
+			this->Panel_MID->Name = L"Panel_MID";
+			this->Panel_MID->Size = System::Drawing::Size(677, 459);
+			this->Panel_MID->TabIndex = 2;
 			// 
-			// bajaTemporalToolStripMenuItem
+			// Boton_Productos
 			// 
-			this->bajaTemporalToolStripMenuItem->Name = L"bajaTemporalToolStripMenuItem";
-			this->bajaTemporalToolStripMenuItem->Size = System::Drawing::Size(147, 22);
-			this->bajaTemporalToolStripMenuItem->Text = L"Baja temporal";
+			this->Boton_Productos->AccessibleRole = System::Windows::Forms::AccessibleRole::None;
+			this->Boton_Productos->Dock = System::Windows::Forms::DockStyle::Top;
+			this->Boton_Productos->FlatAppearance->BorderSize = 0;
+			this->Boton_Productos->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Boton_Productos->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Boton_Productos->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->Boton_Productos->Location = System::Drawing::Point(0, 188);
+			this->Boton_Productos->Name = L"Boton_Productos";
+			this->Boton_Productos->Size = System::Drawing::Size(194, 48);
+			this->Boton_Productos->TabIndex = 2;
+			this->Boton_Productos->Text = L"Productos";
+			this->Boton_Productos->UseVisualStyleBackColor = true;
 			// 
-			// bajaTotalToolStripMenuItem
+			// Boton_Stock
 			// 
-			this->bajaTotalToolStripMenuItem->Name = L"bajaTotalToolStripMenuItem";
-			this->bajaTotalToolStripMenuItem->Size = System::Drawing::Size(147, 22);
-			this->bajaTotalToolStripMenuItem->Text = L"Baja total";
+			this->Boton_Stock->AccessibleRole = System::Windows::Forms::AccessibleRole::None;
+			this->Boton_Stock->Dock = System::Windows::Forms::DockStyle::Top;
+			this->Boton_Stock->FlatAppearance->BorderSize = 0;
+			this->Boton_Stock->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Boton_Stock->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Boton_Stock->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->Boton_Stock->Location = System::Drawing::Point(0, 236);
+			this->Boton_Stock->Name = L"Boton_Stock";
+			this->Boton_Stock->Size = System::Drawing::Size(194, 48);
+			this->Boton_Stock->TabIndex = 3;
+			this->Boton_Stock->Text = L"Stock";
+			this->Boton_Stock->UseVisualStyleBackColor = true;
 			// 
-			// productosToolStripMenuItem
+			// Boton_Ventas
 			// 
-			this->productosToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
-				this->agregarNuevoProductoToolStripMenuItem,
-					this->buscarProductoToolStripMenuItem, this->stockProductosToolStripMenuItem, this->bajaProductoToolStripMenuItem
-			});
-			this->productosToolStripMenuItem->Name = L"productosToolStripMenuItem";
-			this->productosToolStripMenuItem->Size = System::Drawing::Size(73, 20);
-			this->productosToolStripMenuItem->Text = L"Productos";
+			this->Boton_Ventas->AccessibleRole = System::Windows::Forms::AccessibleRole::None;
+			this->Boton_Ventas->Dock = System::Windows::Forms::DockStyle::Top;
+			this->Boton_Ventas->FlatAppearance->BorderSize = 0;
+			this->Boton_Ventas->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Boton_Ventas->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Boton_Ventas->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->Boton_Ventas->Location = System::Drawing::Point(0, 284);
+			this->Boton_Ventas->Name = L"Boton_Ventas";
+			this->Boton_Ventas->Size = System::Drawing::Size(194, 48);
+			this->Boton_Ventas->TabIndex = 4;
+			this->Boton_Ventas->Text = L"Ventas";
+			this->Boton_Ventas->UseVisualStyleBackColor = true;
 			// 
-			// agregarNuevoProductoToolStripMenuItem
+			// Boton_Salir
 			// 
-			this->agregarNuevoProductoToolStripMenuItem->Name = L"agregarNuevoProductoToolStripMenuItem";
-			this->agregarNuevoProductoToolStripMenuItem->Size = System::Drawing::Size(204, 22);
-			this->agregarNuevoProductoToolStripMenuItem->Text = L"Agregar nuevo producto";
-			// 
-			// buscarProductoToolStripMenuItem
-			// 
-			this->buscarProductoToolStripMenuItem->Name = L"buscarProductoToolStripMenuItem";
-			this->buscarProductoToolStripMenuItem->Size = System::Drawing::Size(204, 22);
-			this->buscarProductoToolStripMenuItem->Text = L"Buscar producto";
-			// 
-			// stockProductosToolStripMenuItem
-			// 
-			this->stockProductosToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->verStockTotalToolStripMenuItem,
-					this->agregarStockToolStripMenuItem
-			});
-			this->stockProductosToolStripMenuItem->Name = L"stockProductosToolStripMenuItem";
-			this->stockProductosToolStripMenuItem->Size = System::Drawing::Size(204, 22);
-			this->stockProductosToolStripMenuItem->Text = L"Stock productos";
-			// 
-			// verStockTotalToolStripMenuItem
-			// 
-			this->verStockTotalToolStripMenuItem->Name = L"verStockTotalToolStripMenuItem";
-			this->verStockTotalToolStripMenuItem->Size = System::Drawing::Size(148, 22);
-			this->verStockTotalToolStripMenuItem->Text = L"Ver stock total";
-			// 
-			// agregarStockToolStripMenuItem
-			// 
-			this->agregarStockToolStripMenuItem->Name = L"agregarStockToolStripMenuItem";
-			this->agregarStockToolStripMenuItem->Size = System::Drawing::Size(148, 22);
-			this->agregarStockToolStripMenuItem->Text = L"Agregar stock";
-			// 
-			// bajaProductoToolStripMenuItem
-			// 
-			this->bajaProductoToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->bajaTemporalToolStripMenuItem1,
-					this->bajaTotalToolStripMenuItem1
-			});
-			this->bajaProductoToolStripMenuItem->Name = L"bajaProductoToolStripMenuItem";
-			this->bajaProductoToolStripMenuItem->Size = System::Drawing::Size(204, 22);
-			this->bajaProductoToolStripMenuItem->Text = L"Baja producto";
-			// 
-			// bajaTemporalToolStripMenuItem1
-			// 
-			this->bajaTemporalToolStripMenuItem1->Name = L"bajaTemporalToolStripMenuItem1";
-			this->bajaTemporalToolStripMenuItem1->Size = System::Drawing::Size(147, 22);
-			this->bajaTemporalToolStripMenuItem1->Text = L"Baja temporal";
-			// 
-			// bajaTotalToolStripMenuItem1
-			// 
-			this->bajaTotalToolStripMenuItem1->Name = L"bajaTotalToolStripMenuItem1";
-			this->bajaTotalToolStripMenuItem1->Size = System::Drawing::Size(147, 22);
-			this->bajaTotalToolStripMenuItem1->Text = L"Baja total";
-			// 
-			// ventasToolStripMenuItem
-			// 
-			this->ventasToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->buscarPorFechaToolStripMenuItem });
-			this->ventasToolStripMenuItem->Name = L"ventasToolStripMenuItem";
-			this->ventasToolStripMenuItem->Size = System::Drawing::Size(53, 20);
-			this->ventasToolStripMenuItem->Text = L"Ventas";
-			// 
-			// buscarPorFechaToolStripMenuItem
-			// 
-			this->buscarPorFechaToolStripMenuItem->Name = L"buscarPorFechaToolStripMenuItem";
-			this->buscarPorFechaToolStripMenuItem->Size = System::Drawing::Size(162, 22);
-			this->buscarPorFechaToolStripMenuItem->Text = L"Buscar por fecha";
-			// 
-			// salirToolStripMenuItem
-			// 
-			this->salirToolStripMenuItem->Name = L"salirToolStripMenuItem";
-			this->salirToolStripMenuItem->Size = System::Drawing::Size(41, 20);
-			this->salirToolStripMenuItem->Text = L"Salir";
-			this->salirToolStripMenuItem->Click += gcnew System::EventHandler(this, &VentanaADM::salirToolStripMenuItem_Click);
+			this->Boton_Salir->AccessibleRole = System::Windows::Forms::AccessibleRole::None;
+			this->Boton_Salir->Dock = System::Windows::Forms::DockStyle::Top;
+			this->Boton_Salir->FlatAppearance->BorderSize = 0;
+			this->Boton_Salir->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Boton_Salir->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Boton_Salir->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->Boton_Salir->Location = System::Drawing::Point(0, 332);
+			this->Boton_Salir->Name = L"Boton_Salir";
+			this->Boton_Salir->Size = System::Drawing::Size(194, 48);
+			this->Boton_Salir->TabIndex = 5;
+			this->Boton_Salir->Text = L"Salir";
+			this->Boton_Salir->UseVisualStyleBackColor = true;
 			// 
 			// VentanaADM
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(838, 529);
-			this->Controls->Add(this->Strip_ADM);
-			this->MainMenuStrip = this->Strip_ADM;
+			this->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->ClientSize = System::Drawing::Size(871, 459);
+			this->Controls->Add(this->Panel_MID);
+			this->Controls->Add(this->Panel_Izquierdo);
 			this->Name = L"VentanaADM";
 			this->Text = L"VentanaADM";
-			this->Strip_ADM->ResumeLayout(false);
-			this->Strip_ADM->PerformLayout();
+			this->Panel_Izquierdo->ResumeLayout(false);
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
-		//Strip, no tocar, rompi todo xd ja 
-private: System::Void Strip_ADM_ItemClicked(System::Object^ sender, System::Windows::Forms::ToolStripItemClickedEventArgs^ e) {
-	}
+		
+//Recibe como parametro un formulario hijo, abre el formulario dentro del panel "MID"
+public:
+	Form^ Actual;
+			void AbrirFormulario(Form^ FormularioHijo)
+			{
+				if(this->Actual != nullptr)
+				{
+					this->Actual->Close();
+				}
+
+				this->Actual = FormularioHijo;
+				FormularioHijo->Dock = DockStyle::Fill;
+				FormularioHijo->TopLevel = false;
+				Panel_MID->Controls->Add(FormularioHijo);
+				Panel_MID->Tag = FormularioHijo;
+				FormularioHijo->Show();
+
+			
+			}
 
 
 
-
-//Opcion Buscar Empleado llamo al formulario.
-private: System::Void buscasEmpleadoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	InterfazGrafica::FormularioBuscarEmpleado^ FormularioBuscarEmpleado = gcnew InterfazGrafica::FormularioBuscarEmpleado;
-	FormularioBuscarEmpleado->ShowDialog();
-
+private: System::Void Boton_Inicio_Click(System::Object^ sender, System::EventArgs^ e) {
+		
+	this->AbrirFormulario(gcnew InterfazGrafica::VentanaVENDER());
 }
+private: System::Void Boton_EmpleadosOPC_Click(System::Object^ sender, System::EventArgs^ e) {
 
+	this->AbrirFormulario(gcnew InterfazGrafica::VentanaEmpleados());
 
-//Opcion agregarempleado, llamo al formulario.
-private: System::Void agregarEmpleadoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	InterfazGrafica::FormularioAgregarEmpleado^ FormularioAgregarEmpleado = gcnew InterfazGrafica::FormularioAgregarEmpleado;
-	FormularioAgregarEmpleado->ShowDialog();
-}
-
-
-	//Boton "Salir" cierro el formulario.
-private: System::Void salirToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	this->Close();	
 }
 };
 }

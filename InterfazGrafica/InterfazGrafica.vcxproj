@@ -162,6 +162,9 @@
     <ClInclude Include="VentanaEmpleados.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="VentanaVENDER.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
@@ -177,6 +180,8 @@
     </ClCompile>
     <ClCompile Include="VentanaADM.cpp" />
     <ClCompile Include="VentanaEmpleados.cpp" />
+    <ClCompile Include="VentanaEmpleados1.cpp" />
+    <ClCompile Include="VentanaVENDER.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
@@ -203,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaEmpleados.resx">
       <DependentUpon>VentanaEmpleados.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaVENDER.resx">
+      <DependentUpon>VentanaVENDER.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
