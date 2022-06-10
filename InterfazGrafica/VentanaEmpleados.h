@@ -1,5 +1,5 @@
 #pragma once
-
+#include "FormularioAgregarEmpleado.h"
 namespace InterfazGrafica {
 
 	using namespace System;
@@ -103,6 +103,7 @@ namespace InterfazGrafica {
 			this->Boton_NuevoEmpleado->TabIndex = 5;
 			this->Boton_NuevoEmpleado->Text = L"Nuevo empleado";
 			this->Boton_NuevoEmpleado->UseVisualStyleBackColor = false;
+			this->Boton_NuevoEmpleado->Click += gcnew System::EventHandler(this, &VentanaEmpleados::Boton_NuevoEmpleado_Click);
 			// 
 			// Boton_Bajatemporal
 			// 
@@ -151,5 +152,25 @@ namespace InterfazGrafica {
 
 		}
 #pragma endregion
-	};
+	public:
+		Form^ ActualADM;
+		void AbrirFormulario(Form^ FormularioHijoADM)
+		{
+			if (this->ActualADM != nullptr)
+			{
+				this->ActualADM->Close();
+			}
+			this->ActualADM = FormularioHijoADM;
+			FormularioHijoADM->Dock = DockStyle::Fill;
+			FormularioHijoADM->TopLevel = false;
+			this->Controls->Add(FormularioHijoADM);
+			this->Tag = FormularioHijoADM;
+			FormularioHijoADM->Show();
+		}
+
+	private: System::Void Boton_NuevoEmpleado_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->AbrirFormulario(gcnew InterfazGrafica::FormularioAgregarEmpleado());
+		
+	}
+};
 }
