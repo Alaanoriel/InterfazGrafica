@@ -34,7 +34,13 @@ namespace InterfazGrafica {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Button^ Boton_BuscarEmpleado;
+	protected:
+	private: System::Windows::Forms::Label^ Label_TextEmpleado;
+	private: System::Windows::Forms::Button^ Boton_NuevoEmpleado;
+	private: System::Windows::Forms::Button^ Boton_Bajatemporal;
+	private: System::Windows::Forms::Button^ Boton_BajaTotal;
+
 	protected:
 
 	private:
@@ -50,19 +56,81 @@ namespace InterfazGrafica {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->Boton_BuscarEmpleado = (gcnew System::Windows::Forms::Button());
+			this->Label_TextEmpleado = (gcnew System::Windows::Forms::Label());
+			this->Boton_NuevoEmpleado = (gcnew System::Windows::Forms::Button());
+			this->Boton_Bajatemporal = (gcnew System::Windows::Forms::Button());
+			this->Boton_BajaTotal = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// label1
+			// Boton_BuscarEmpleado
 			// 
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->label1->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label1->Location = System::Drawing::Point(224, 123);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(116, 13);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"VETANAEMPLEADOS";
+			this->Boton_BuscarEmpleado->BackColor = System::Drawing::Color::BurlyWood;
+			this->Boton_BuscarEmpleado->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Boton_BuscarEmpleado->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Boton_BuscarEmpleado->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->Boton_BuscarEmpleado->Location = System::Drawing::Point(345, 87);
+			this->Boton_BuscarEmpleado->Name = L"Boton_BuscarEmpleado";
+			this->Boton_BuscarEmpleado->Size = System::Drawing::Size(202, 131);
+			this->Boton_BuscarEmpleado->TabIndex = 1;
+			this->Boton_BuscarEmpleado->Text = L"Buscar empleado";
+			this->Boton_BuscarEmpleado->UseVisualStyleBackColor = false;
+			// 
+			// Label_TextEmpleado
+			// 
+			this->Label_TextEmpleado->AutoSize = true;
+			this->Label_TextEmpleado->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Label_TextEmpleado->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Label_TextEmpleado->ForeColor = System::Drawing::Color::BurlyWood;
+			this->Label_TextEmpleado->Location = System::Drawing::Point(229, 34);
+			this->Label_TextEmpleado->Name = L"Label_TextEmpleado";
+			this->Label_TextEmpleado->Size = System::Drawing::Size(224, 25);
+			this->Label_TextEmpleado->TabIndex = 4;
+			this->Label_TextEmpleado->Text = L"Menu de empleados\r\n";
+			// 
+			// Boton_NuevoEmpleado
+			// 
+			this->Boton_NuevoEmpleado->BackColor = System::Drawing::Color::BurlyWood;
+			this->Boton_NuevoEmpleado->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Boton_NuevoEmpleado->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Boton_NuevoEmpleado->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->Boton_NuevoEmpleado->Location = System::Drawing::Point(137, 87);
+			this->Boton_NuevoEmpleado->Name = L"Boton_NuevoEmpleado";
+			this->Boton_NuevoEmpleado->Size = System::Drawing::Size(202, 131);
+			this->Boton_NuevoEmpleado->TabIndex = 5;
+			this->Boton_NuevoEmpleado->Text = L"Nuevo empleado";
+			this->Boton_NuevoEmpleado->UseVisualStyleBackColor = false;
+			// 
+			// Boton_Bajatemporal
+			// 
+			this->Boton_Bajatemporal->BackColor = System::Drawing::Color::BurlyWood;
+			this->Boton_Bajatemporal->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Boton_Bajatemporal->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Boton_Bajatemporal->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->Boton_Bajatemporal->Location = System::Drawing::Point(137, 224);
+			this->Boton_Bajatemporal->Name = L"Boton_Bajatemporal";
+			this->Boton_Bajatemporal->Size = System::Drawing::Size(202, 131);
+			this->Boton_Bajatemporal->TabIndex = 6;
+			this->Boton_Bajatemporal->Text = L"Baja temporal";
+			this->Boton_Bajatemporal->UseVisualStyleBackColor = false;
+			// 
+			// Boton_BajaTotal
+			// 
+			this->Boton_BajaTotal->BackColor = System::Drawing::Color::BurlyWood;
+			this->Boton_BajaTotal->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Boton_BajaTotal->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Boton_BajaTotal->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->Boton_BajaTotal->Location = System::Drawing::Point(345, 224);
+			this->Boton_BajaTotal->Name = L"Boton_BajaTotal";
+			this->Boton_BajaTotal->Size = System::Drawing::Size(202, 131);
+			this->Boton_BajaTotal->TabIndex = 7;
+			this->Boton_BajaTotal->Text = L"Baja total";
+			this->Boton_BajaTotal->UseVisualStyleBackColor = false;
 			// 
 			// VentanaEmpleados
 			// 
@@ -70,7 +138,11 @@ namespace InterfazGrafica {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->ClientSize = System::Drawing::Size(677, 459);
-			this->Controls->Add(this->label1);
+			this->Controls->Add(this->Boton_BajaTotal);
+			this->Controls->Add(this->Boton_Bajatemporal);
+			this->Controls->Add(this->Boton_NuevoEmpleado);
+			this->Controls->Add(this->Label_TextEmpleado);
+			this->Controls->Add(this->Boton_BuscarEmpleado);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"VentanaEmpleados";
 			this->Text = L"VentanaEmpleados";

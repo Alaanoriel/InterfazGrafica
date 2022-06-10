@@ -162,6 +162,9 @@
     <ClInclude Include="VentanaEmpleados.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="VentanaProductos.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="VentanaVENDER.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -181,6 +184,7 @@
     <ClCompile Include="VentanaADM.cpp" />
     <ClCompile Include="VentanaEmpleados.cpp" />
     <ClCompile Include="VentanaEmpleados1.cpp" />
+    <ClCompile Include="VentanaProductos.cpp" />
     <ClCompile Include="VentanaVENDER.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaEmpleados.resx">
       <DependentUpon>VentanaEmpleados.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaProductos.resx">
+      <DependentUpon>VentanaProductos.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaVENDER.resx">
       <DependentUpon>VentanaVENDER.h</DependentUpon>
