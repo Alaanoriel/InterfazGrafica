@@ -171,6 +171,7 @@ namespace InterfazGrafica {
 	private: System::Void Boton_NuevoEmpleado_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->AbrirFormulario(gcnew InterfazGrafica::FormularioAgregarEmpleado());
 		
+		
 	}
 };
 }
