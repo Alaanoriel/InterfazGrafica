@@ -272,7 +272,9 @@ namespace InterfazGrafica {
 			this->ClientSize = System::Drawing::Size(871, 459);
 			this->Controls->Add(this->Panel_MID);
 			this->Controls->Add(this->Panel_Izquierdo);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::Fixed3D;
 			this->Name = L"VentanaADM";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"VentanaADM";
 			this->Panel_Izquierdo->ResumeLayout(false);
 			this->Panel_MID->ResumeLayout(false);

@@ -157,20 +157,25 @@ namespace InterfazGrafica {
 		void AbrirFormulario(Form^ FormularioHijoADM)
 		{
 			if (this->ActualADM != nullptr)
-			{
-				this->ActualADM->Close();
-			}
-			this->ActualADM = FormularioHijoADM;
-			FormularioHijoADM->Dock = DockStyle::Fill;
-			FormularioHijoADM->TopLevel = false;
-			this->Controls->Add(FormularioHijoADM);
-			this->Tag = FormularioHijoADM;
-			FormularioHijoADM->Show();
+				{
+					this->ActualADM->Close();
+				}
+				VentanaEmpleados::Controls->Clear();
+				this->ActualADM = FormularioHijoADM;
+				FormularioHijoADM->Dock = DockStyle::Fill;
+				FormularioHijoADM->TopLevel = false;
+				this->Controls->Add(FormularioHijoADM);
+				this->Tag = FormularioHijoADM;
+				FormularioHijoADM->Show();
+
 		}
 
 	private: System::Void Boton_NuevoEmpleado_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->AbrirFormulario(gcnew InterfazGrafica::FormularioAgregarEmpleado());
 		
+		this->AbrirFormulario(gcnew InterfazGrafica::FormularioAgregarEmpleado());
 	}
+
+	
+
 };
 }
