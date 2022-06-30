@@ -172,6 +172,7 @@
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="CppCLR_WinformsProjekt.cpp" />
+    <ClCompile Include="Empleados.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="FormularioAgregarEmpleado.cpp" />
     <ClCompile Include="FormularioBuscarEmpleado.cpp" />

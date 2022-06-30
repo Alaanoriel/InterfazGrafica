@@ -2,6 +2,8 @@
 #include <iostream>
 using namespace std;
 
+
+
 class Empleado {
 private:
 	int codigo_empleado;
@@ -60,33 +62,21 @@ public:
 	}
 		
 
-	int BuscarEmpleado(int Codigo) {
+	int Empleado::BuscarEmpleado(int Codigo) {
 		int i = 0;
 		int pos = 0;
-		FILE* Empleado;
-		Empleado = fopen("Datos.txt", "rb");
-		if (Empleado == NULL) {
-			return -1;
-		}
 		while (LeerDiscoEmpleado(pos++)) {
 			if (codigo_empleado == Codigo) {
-				fclose(Empleado);
+
 				return i;
 			}
 			i++;
 		}
-		fclose(Empleado);
 		return -1;
 	}
 
-
-
-
-
-
-
-
-
-
+	
 
 };
+
+

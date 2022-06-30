@@ -6,6 +6,8 @@
 #include <conio.h>
 #include <string>
 #include <sstream>
+#include "Empleados.h"
+#include "Empleados.cpp"
 using namespace std;
 
 namespace CppCLRWinformsProjekt {
@@ -196,8 +198,8 @@ namespace CppCLRWinformsProjekt {
 	// Boton "Administrador" Menu inicio Login
 	private: System::Void Bton_Login_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		Empleado obj;
-		int Posicion = 0;
+		Empleado* obj;
+		int cant = contarRegistrosEmpleados();
 
 		//En caso de que el texto este vacio, saldra una ventana pidiendo que se ingrese algun codigo
 		if (Txt_Codigo->Text == "")
@@ -215,14 +217,15 @@ namespace CppCLRWinformsProjekt {
 			
 		}
 
-
-		while (obj.LeerDiscoEmpleado(Posicion++)) {
-
-			if (CodigoIngresado == obj.getcodigo_empleado())
+		obj = new Empleado[cant];
+		CargarRegistrosEmpleado(obj, cant);
+		delete obj;
+		for (int i = 0; i < cant; i++)
+		{
+			if (CodigoIngresado == obj[i].getcodigo_empleado())
 			{
 				Ventana();
 			}
-		
 		}
 		
 		MessageBox::Show("Codigo Invalido", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
