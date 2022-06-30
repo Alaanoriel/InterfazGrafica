@@ -1,6 +1,5 @@
 #pragma once
-#include <iostream>
-using namespace std;
+
 
 
 class Producto {
@@ -34,63 +33,9 @@ public:
 
 	//Grabar
 
-	bool GrabarProducto()
-	{
-		FILE* GProducto;
-		GProducto = fopen("Productos.dat", "ab");
-		if(GProducto== NULL)
-		{
-			return false;
-		}
-		
-		fwrite(this, sizeof * this, 1,GProducto);
-		fclose(GProducto);
-		return true;
+	bool GrabarProducto();
 	
-	}
-
-	int LeerDiscoProd(int Posicion)
-	{
-		int x;
-		FILE* GProducto;
-		GProducto = fopen("Productos.dat", "rb");
-		if(GProducto == NULL)
-		{
-			return 0;
-		}
-
-		fseek(GProducto, Posicion * sizeof * this, 0);
-		x = fread(this, sizeof * this, 1, GProducto);
-		fclose(GProducto);
-		return x;
-	}
-
-
-
-
-
-
-	//busco producto
-	int BuscarProducto(int Codigo) {
-		int i = 0;
-		int pos = 0;
-		FILE* GProducto;
-		GProducto = fopen("Productos.dat", "rb");
-		if (GProducto == NULL) {
-			return -1;
-		}
-		while (LeerDiscoProd(pos++)) {
-			if (codigo_producto == Codigo) {
-				fclose(GProducto);
-				return i;
-			}
-			i++;
-		}
-		fclose(GProducto);
-		return -1;
-	}
-
-
-
+	/// leeo
+	bool LeerDiscoProd(int Posicion);
 
 };
