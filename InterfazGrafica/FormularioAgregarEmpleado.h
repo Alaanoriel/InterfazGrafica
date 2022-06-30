@@ -1,9 +1,9 @@
 #pragma once
 #include <iostream>
 #include <msclr\marshal_cppstd.h>
-#include "Empleados.h"
 #include <string>
 #include <cstring>
+#include "Empleados.h"
 using namespace std;
 
 namespace InterfazGrafica {
@@ -31,7 +31,7 @@ namespace InterfazGrafica {
 
 		string MarshalCadena(System::String^ transformar)
 		{
-			string cad = msclr::interop::marshal_as<string>(transformar);
+			std::string cad = msclr::interop::marshal_as<std::string>(transformar);
 			return cad;
 		}
 

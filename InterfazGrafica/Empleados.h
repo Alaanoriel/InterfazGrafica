@@ -1,80 +1,39 @@
 #pragma once
-#include <iostream>
-using namespace std;
-
 
 
 class Empleado {
 private:
 	int codigo_empleado;
 	int dni_empleado;
-	string nombre_empleado;
-	string apellido_empleado;
-	string categoria_empleado;
+	std::string nombre_empleado;
+	std::string apellido_empleado;
+	std::string categoria_empleado;
 	bool estado_empleado;
 public:
 	//declaro gets
 	int getcodigo_empleado() { return codigo_empleado; }
 	int getdni_empleado() { return dni_empleado; }
-	string getnombre_empleado() { return nombre_empleado; }
-	string getapellido_empleado() { return apellido_empleado; }
+	std::string getnombre_empleado() { return nombre_empleado; }
+	std::string getapellido_empleado() { return apellido_empleado; }
 	bool getestado_empleado() { return estado_empleado; }
-	string getcagetoria_empleado() { return categoria_empleado; }
+	std::string getcagetoria_empleado() { return categoria_empleado; }
 
 	//declaro sets
 	void setcodigo_empleado(int CodigoEmpleado) { codigo_empleado = CodigoEmpleado; }
 	void setdni_empleado(int Dni) { dni_empleado = Dni; }
-	void setnombre_empleado(string NombreEmpleado) { nombre_empleado=NombreEmpleado; }
-	void setapellido_empleado(string ApellidoEmpleado) { apellido_empleado=ApellidoEmpleado; }
-	void setcategoria_empleado(string Categoria) { categoria_empleado = Categoria; }
+	void setnombre_empleado(std::string NombreEmpleado) { nombre_empleado=NombreEmpleado; }
+	void setapellido_empleado(std::string ApellidoEmpleado) { apellido_empleado=ApellidoEmpleado; }
+	void setcategoria_empleado(std::string Categoria) { categoria_empleado = Categoria; }
 	bool setestado_empleado(bool EstadoEmpleado) { estado_empleado = EstadoEmpleado; }
 
 	//grabo
-	bool GrabarEmpleado()
-	{
-		FILE* Empleado;
-		Empleado = fopen("Datos.txt", "ab");
-		if (Empleado == NULL)
-		{
-			return false;
-		}
-
-		fwrite(this, sizeof * this, 1, Empleado);
-		fclose(Empleado);
-		return true;
-
-	}
+	bool GrabarEmpleado();
 
 	//lee
-	bool LeerDiscoEmpleado(int Posicion)
-	{
-		bool x;
-		FILE* Empleado;
-		Empleado = fopen("Datos.txt", "rb");
-		if (Empleado == NULL)
-		{
-			return 0;
-		}
-		fseek(Empleado, Posicion * sizeof * this, 0);
-		x = fread(this, sizeof * this, 1, Empleado);
-		fclose(Empleado);
-		return x;
-	}
-		
-
-	int Empleado::BuscarEmpleado(int Codigo) {
-		int pos = 0;
-		while (LeerDiscoEmpleado(pos++)) {
-			if (codigo_empleado == Codigo) {
-
-				return pos;
-			}
-		}
-		return -1;
-	}
+	bool LeerDiscoEmpleado(int Posicion);
 
 	
 
-};
 
+};
 

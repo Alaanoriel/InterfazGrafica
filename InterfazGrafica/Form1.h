@@ -214,7 +214,7 @@ namespace CppCLRWinformsProjekt {
 			Ventana();
 			
 		}else {
-			if (obj.BuscarEmpleado(CodigoIngresado)!=-1)Ventana();
+			if (BuscarEmpleado(CodigoIngresado)!=-1)Ventana();
 			else MessageBox::Show("Codigo Invalido", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		
