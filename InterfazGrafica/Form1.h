@@ -198,9 +198,7 @@ namespace CppCLRWinformsProjekt {
 	// Boton "Administrador" Menu inicio Login
 	private: System::Void Bton_Login_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		Empleado* obj;
-		int cant = contarRegistrosEmpleados();
-
+		Empleado obj;
 		//En caso de que el texto este vacio, saldra una ventana pidiendo que se ingrese algun codigo
 		if (Txt_Codigo->Text == "")
 		{
@@ -215,21 +213,10 @@ namespace CppCLRWinformsProjekt {
 		{
 			Ventana();
 			
+		}else {
+			if (obj.BuscarEmpleado(CodigoIngresado)!=-1)Ventana();
+			else MessageBox::Show("Codigo Invalido", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
-
-		obj = new Empleado[cant];
-		CargarRegistrosEmpleado(obj, cant);
-		delete obj;
-		for (int i = 0; i < cant; i++)
-		{
-			if (CodigoIngresado == obj[i].getcodigo_empleado())
-			{
-				Ventana();
-			}
-		}
-		
-		MessageBox::Show("Codigo Invalido", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		
 		
 
 	}

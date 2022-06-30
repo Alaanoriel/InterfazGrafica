@@ -63,14 +63,12 @@ public:
 		
 
 	int Empleado::BuscarEmpleado(int Codigo) {
-		int i = 0;
 		int pos = 0;
 		while (LeerDiscoEmpleado(pos++)) {
 			if (codigo_empleado == Codigo) {
 
-				return i;
+				return pos;
 			}
-			i++;
 		}
 		return -1;
 	}
