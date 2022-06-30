@@ -4,7 +4,8 @@
 
 
 int BuscarProducto(int Codigo);
-
+int contarProductos();
+void cargarRegistroProductos(Producto *vec, int cant);
 
 /// Metodos de la clase "Producto"
 
@@ -44,3 +45,25 @@ inline int BuscarProducto(int Codigo)
 	}
 	return -1;
 }
+
+inline int contarProductos()
+{
+	FILE* Producto;
+	Producto = fopen("Productos.dat", "rb");
+	if (Producto == NULL) return -1;
+	fseek(Producto, 0, 2);
+	int cant = ftell(Producto);
+	fclose(Producto);
+	return cant / sizeof(Producto);
+}
+
+inline void cargarRegistroProductos(Producto* vec, int cant)
+{
+	for (int i = 0; i < cant; i++)
+	{
+		vec[i].LeerDiscoProd(i);
+	}
+}
+
+
+
