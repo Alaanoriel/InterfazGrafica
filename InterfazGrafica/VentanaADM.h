@@ -273,6 +273,7 @@ namespace InterfazGrafica {
 			this->Controls->Add(this->Panel_MID);
 			this->Controls->Add(this->Panel_Izquierdo);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::Fixed3D;
+			this->MaximizeBox = false;
 			this->Name = L"VentanaADM";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"VentanaADM";

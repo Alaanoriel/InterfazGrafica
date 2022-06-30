@@ -158,7 +158,8 @@ namespace CppCLRWinformsProjekt {
 			this->Controls->Add(this->Label_Codigo);
 			this->Controls->Add(this->Txt_Codigo);
 			this->Controls->Add(this->Bton_LoginADM);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::SizableToolWindow;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->MaximizeBox = false;
 			this->Name = L"Form1";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Inicio";
