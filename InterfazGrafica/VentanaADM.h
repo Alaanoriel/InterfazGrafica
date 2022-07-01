@@ -138,6 +138,7 @@ namespace InterfazGrafica {
 			this->Boton_Salir->TabIndex = 5;
 			this->Boton_Salir->Text = L"Salir";
 			this->Boton_Salir->UseVisualStyleBackColor = false;
+			this->Boton_Salir->Click += gcnew System::EventHandler(this, &VentanaADM::Boton_Salir_Click);
 			// 
 			// Boton_Ventas
 			// 
@@ -325,6 +326,10 @@ private: System::Void Boton_Stock_Click(System::Object^ sender, System::EventArg
 private: System::Void Boton_Productos_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	this->AbrirFormulario(gcnew InterfazGrafica::VentanaProductos());
+}
+private: System::Void Boton_Salir_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Close();
 }
 };
 }

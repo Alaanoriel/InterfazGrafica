@@ -1,5 +1,8 @@
 #pragma once
 #include "FormularioAgregarEmpleado.h"
+#include "VentanBuscarEmpleado.h"
+#include "VentanaBajaTemportalEmpleado.h"
+#include "VentanaBajaTotalEmpleado.h"
 namespace InterfazGrafica {
 
 	using namespace System;
@@ -76,6 +79,7 @@ namespace InterfazGrafica {
 			this->Boton_BuscarEmpleado->TabIndex = 1;
 			this->Boton_BuscarEmpleado->Text = L"Buscar empleado";
 			this->Boton_BuscarEmpleado->UseVisualStyleBackColor = false;
+			this->Boton_BuscarEmpleado->Click += gcnew System::EventHandler(this, &VentanaEmpleados::Boton_BuscarEmpleado_Click);
 			// 
 			// Label_TextEmpleado
 			// 
@@ -118,6 +122,7 @@ namespace InterfazGrafica {
 			this->Boton_Bajatemporal->TabIndex = 6;
 			this->Boton_Bajatemporal->Text = L"Baja temporal";
 			this->Boton_Bajatemporal->UseVisualStyleBackColor = false;
+			this->Boton_Bajatemporal->Click += gcnew System::EventHandler(this, &VentanaEmpleados::Boton_Bajatemporal_Click);
 			// 
 			// Boton_BajaTotal
 			// 
@@ -132,6 +137,7 @@ namespace InterfazGrafica {
 			this->Boton_BajaTotal->TabIndex = 7;
 			this->Boton_BajaTotal->Text = L"Baja total";
 			this->Boton_BajaTotal->UseVisualStyleBackColor = false;
+			this->Boton_BajaTotal->Click += gcnew System::EventHandler(this, &VentanaEmpleados::Boton_BajaTotal_Click);
 			// 
 			// VentanaEmpleados
 			// 
@@ -175,7 +181,18 @@ namespace InterfazGrafica {
 		this->AbrirFormulario(gcnew InterfazGrafica::FormularioAgregarEmpleado());
 	}
 
-	
+private: System::Void Boton_BuscarEmpleado_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->AbrirFormulario(gcnew InterfazGrafica::VentanBuscarEmpleado());
+}
+
+
+private: System::Void Boton_Bajatemporal_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->AbrirFormulario(gcnew InterfazGrafica::VentanaBajaTemportalEmpleado());
+}
+
+private: System::Void Boton_BajaTotal_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->AbrirFormulario(gcnew InterfazGrafica::VentanaBajaTotalEmpleado());
+}
 
 };
 }

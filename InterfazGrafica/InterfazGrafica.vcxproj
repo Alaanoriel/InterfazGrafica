@@ -160,6 +160,12 @@
     <ClInclude Include="VentanaADM.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="VentanaBajaTemportalEmpleado.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="VentanaBajaTotalEmpleado.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="VentanaEmpleados.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -167,6 +173,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="VentanaVENDER.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="VentanBuscarEmpleado.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -186,10 +195,13 @@
     <ClCompile Include="Producto.cpp" />
     <ClCompile Include="Venta.cpp" />
     <ClCompile Include="VentanaADM.cpp" />
+    <ClCompile Include="VentanaBajaTemportalEmpleado.cpp" />
+    <ClCompile Include="VentanaBajaTotalEmpleado.cpp" />
     <ClCompile Include="VentanaEmpleados.cpp" />
     <ClCompile Include="VentanaEmpleados1.cpp" />
     <ClCompile Include="VentanaProductos.cpp" />
     <ClCompile Include="VentanaVENDER.cpp" />
+    <ClCompile Include="VentanBuscarEmpleado.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
@@ -214,6 +226,12 @@
     <EmbeddedResource Include="VentanaADM.resx">
       <DependentUpon>VentanaADM.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VentanaBajaTemportalEmpleado.resx">
+      <DependentUpon>VentanaBajaTemportalEmpleado.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaBajaTotalEmpleado.resx">
+      <DependentUpon>VentanaBajaTotalEmpleado.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaEmpleados.resx">
       <DependentUpon>VentanaEmpleados.h</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaVENDER.resx">
       <DependentUpon>VentanaVENDER.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanBuscarEmpleado.resx">
+      <DependentUpon>VentanBuscarEmpleado.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
