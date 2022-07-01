@@ -74,6 +74,7 @@ namespace InterfazGrafica {
 			this->Boton_NuevoProducto->TabIndex = 5;
 			this->Boton_NuevoProducto->Text = L"Nuevo producto";
 			this->Boton_NuevoProducto->UseVisualStyleBackColor = false;
+			this->Boton_NuevoProducto->Click += gcnew System::EventHandler(this, &VentanaProductos::Boton_NuevoProducto_Click);
 			// 
 			// Boton_Bajaprod
 			// 
@@ -151,7 +152,36 @@ namespace InterfazGrafica {
 
 		}
 #pragma endregion
-	private: System::Void Boton_BuscarProducto_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
+		public:
+			Form^ ActualPROD;
+			void AbrirFormulario(Form^ FormularioHijoPROD)
+			{
+				if (this->ActualPROD != nullptr)
+				{
+					this->ActualPROD->Close();
+				}
+				VentanaProductos::Controls->Clear();
+				this->ActualPROD = FormularioHijoPROD;
+				FormularioHijoPROD->Dock = DockStyle::Fill;
+				FormularioHijoPROD->TopLevel = false;
+				this->Controls->Add(FormularioHijoPROD);
+				this->Tag = FormularioHijoPROD;
+				FormularioHijoPROD->Show();
+
+			}
+
+
+
+
+private: System::Void Boton_NuevoProducto_Click(System::Object^ sender, System::EventArgs^ e) {
+
+
+}
+
+private: System::Void Boton_BuscarProducto_Click(System::Object^ sender, System::EventArgs^ e) {
+
+
+	   }
+
 };
 }

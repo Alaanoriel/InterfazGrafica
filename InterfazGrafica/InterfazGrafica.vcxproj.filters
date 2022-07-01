@@ -56,15 +56,6 @@
     <ClInclude Include="Venta.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="VentanBuscarEmpleado.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="VentanaBajaTemportalEmpleado.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="VentanaBajaTotalEmpleado.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinformsProjekt.cpp">
@@ -107,15 +98,6 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Venta.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="VentanBuscarEmpleado.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="VentanaBajaTemportalEmpleado.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="VentanaBajaTotalEmpleado.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
