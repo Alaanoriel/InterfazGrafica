@@ -150,7 +150,25 @@
     <ClInclude Include="FormularioAgregarEmpleado.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="FormularioAgregarProducto.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormularioBajaTemporalEmpleado.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormularioBajaTemporalProducto.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormularioBajaTotalEmpleado.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormularioBajaTotalProducto.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="FormularioBuscarEmpleado.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormularioBuscarProducto.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Producto.h" />
@@ -176,7 +194,13 @@
     <ClCompile Include="Empleados.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="FormularioAgregarEmpleado.cpp" />
+    <ClCompile Include="FormularioAgregarProducto.cpp" />
+    <ClCompile Include="FormularioBajaTemporalEmpleado.cpp" />
+    <ClCompile Include="FormularioBajaTemporalProducto.cpp" />
+    <ClCompile Include="FormularioBajaTotalEmpleado.cpp" />
+    <ClCompile Include="FormularioBajaTotalProducto.cpp" />
     <ClCompile Include="FormularioBuscarEmpleado.cpp" />
+    <ClCompile Include="FormularioBuscarProducto.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -208,8 +232,26 @@
     <EmbeddedResource Include="FormularioAgregarEmpleado.resx">
       <DependentUpon>FormularioAgregarEmpleado.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormularioAgregarProducto.resx">
+      <DependentUpon>FormularioAgregarProducto.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioBajaTemporalEmpleado.resx">
+      <DependentUpon>FormularioBajaTemporalEmpleado.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioBajaTemporalProducto.resx">
+      <DependentUpon>FormularioBajaTemporalProducto.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioBajaTotalEmpleado.resx">
+      <DependentUpon>FormularioBajaTotalEmpleado.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioBajaTotalProducto.resx">
+      <DependentUpon>FormularioBajaTotalProducto.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioBuscarEmpleado.resx">
       <DependentUpon>FormularioBuscarEmpleado.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioBuscarProducto.resx">
+      <DependentUpon>FormularioBuscarProducto.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaADM.resx">
       <DependentUpon>VentanaADM.h</DependentUpon>

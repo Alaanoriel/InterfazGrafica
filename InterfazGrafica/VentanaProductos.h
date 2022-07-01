@@ -1,5 +1,8 @@
 #pragma once
-
+#include "FormularioAgregarProducto.h"
+#include "FormularioBuscarProducto.h"
+#include "FormularioBajaTemporalProducto.h"
+#include "FormularioBajaTotalProducto.h"
 namespace InterfazGrafica {
 
 	using namespace System;
@@ -89,6 +92,7 @@ namespace InterfazGrafica {
 			this->Boton_Bajaprod->TabIndex = 7;
 			this->Boton_Bajaprod->Text = L"Baja temporal";
 			this->Boton_Bajaprod->UseVisualStyleBackColor = false;
+			this->Boton_Bajaprod->Click += gcnew System::EventHandler(this, &VentanaProductos::Boton_Bajaprod_Click);
 			// 
 			// Boton_BajaTotal
 			// 
@@ -103,6 +107,7 @@ namespace InterfazGrafica {
 			this->Boton_BajaTotal->TabIndex = 8;
 			this->Boton_BajaTotal->Text = L"Baja total";
 			this->Boton_BajaTotal->UseVisualStyleBackColor = false;
+			this->Boton_BajaTotal->Click += gcnew System::EventHandler(this, &VentanaProductos::Boton_BajaTotal_Click);
 			// 
 			// Boton_BuscarProducto
 			// 
@@ -174,14 +179,21 @@ namespace InterfazGrafica {
 
 
 private: System::Void Boton_NuevoProducto_Click(System::Object^ sender, System::EventArgs^ e) {
-
+	this->AbrirFormulario(gcnew InterfazGrafica::FormularioAgregarProducto());
 
 }
 
 private: System::Void Boton_BuscarProducto_Click(System::Object^ sender, System::EventArgs^ e) {
-
+	this->AbrirFormulario(gcnew InterfazGrafica::FormularioBuscarProducto());
 
 	   }
 
+private: System::Void Boton_Bajaprod_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->AbrirFormulario(gcnew InterfazGrafica::FormularioBajaTemporalProducto());
+
+}
+private: System::Void Boton_BajaTotal_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->AbrirFormulario(gcnew InterfazGrafica::FormularioBajaTotalProducto());
+}
 };
 }

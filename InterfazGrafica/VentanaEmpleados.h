@@ -1,6 +1,8 @@
 #pragma once
 #include "FormularioAgregarEmpleado.h"
 #include "FormularioBuscarEmpleado.h"
+#include "FormularioBajaTemporalEmpleado.h"
+#include "FormularioBajaTotalEmpleado.h"
 
 namespace InterfazGrafica {
 
@@ -186,11 +188,11 @@ private: System::Void Boton_BuscarEmpleado_Click(System::Object^ sender, System:
 
 
 private: System::Void Boton_Bajatemporal_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+	this->AbrirFormulario(gcnew InterfazGrafica::FormularioBajaTemporalEmpleado());
 }
 
 private: System::Void Boton_BajaTotal_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+	this->AbrirFormulario(gcnew InterfazGrafica::FormularioBajaTotalEmpleado());
 }
 
 };
