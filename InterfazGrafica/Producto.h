@@ -38,4 +38,15 @@ public:
 	/// leeo
 	bool LeerDiscoProd(int Posicion);
 
+
+	void operator =(Producto prod)
+	{
+		codigo_producto = prod.getcodigo_producto();
+		strcpy(nombre_producto, prod.getnombre_producto());
+		strcpy(color_producto, prod.getcolor_producto());
+		talle_producto = prod.gettalle_producto();
+		stock_producto = prod.getprecio_producto();
+		precio_producto = prod.getprecio_producto();
+
+	}
 };
