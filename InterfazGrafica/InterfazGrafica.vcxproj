@@ -156,6 +156,7 @@
     <ClInclude Include="Producto.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Venta.h" />
     <ClInclude Include="VentanaADM.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -183,6 +184,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Producto.cpp" />
+    <ClCompile Include="Venta.cpp" />
     <ClCompile Include="VentanaADM.cpp" />
     <ClCompile Include="VentanaEmpleados.cpp" />
     <ClCompile Include="VentanaEmpleados1.cpp" />
