@@ -227,13 +227,13 @@ namespace CppCLRWinformsProjekt {
 
 	// Boton "Empleados" Menu inicio Login
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-		InterfazGrafica::VentanaEmpleados^ VentanaEmpleados = gcnew InterfazGrafica::VentanaEmpleados();
-		this->Visible = false;
+		//Esto no va, la ventana empleados ya fue utilizada 
+		//InterfazGrafica::VentanaEmpleados^ VentanaEmpleados = gcnew InterfazGrafica::VentanaEmpleados();
+		//this->Visible = false;
 
 
-		VentanaEmpleados->ShowDialog();
-		this->Visible = true;
+		//VentanaEmpleados->ShowDialog();
+		//this->Visible = true;
 	
 	}
 

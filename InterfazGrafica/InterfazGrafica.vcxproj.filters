@@ -56,6 +56,24 @@
     <ClInclude Include="Venta.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="FormularioBajaTemporalEmpleado.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="FormularioBajaTotalEmpleado.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="FormularioAgregarProducto.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="FormularioBuscarProducto.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="FormularioBajaTemporalProducto.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="FormularioBajaTotalProducto.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinformsProjekt.cpp">
@@ -98,6 +116,24 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Venta.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="FormularioBajaTemporalEmpleado.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="FormularioBajaTotalEmpleado.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="FormularioAgregarProducto.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="FormularioBuscarProducto.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="FormularioBajaTemporalProducto.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="FormularioBajaTotalProducto.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

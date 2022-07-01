@@ -119,13 +119,14 @@ namespace InterfazGrafica {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(477, 235);
+			this->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->ClientSize = System::Drawing::Size(661, 420);
 			this->Controls->Add(this->Txt_Mostrar);
 			this->Controls->Add(this->Bton_Volver);
 			this->Controls->Add(this->Bton_BuscarEmpleado);
 			this->Controls->Add(this->Txt_DNICOD);
 			this->Controls->Add(this->BuscarEmpleado_Label);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"FormularioBuscarEmpleado";
 			this->Text = L"FormularioBuscarEmpleado";
 			this->ResumeLayout(false);
