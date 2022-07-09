@@ -63,6 +63,7 @@ namespace InterfazGrafica {
 	private: System::Windows::Forms::Label^ Label_DNI;
 	private: System::Windows::Forms::Label^ Label_Apellido;
 	private: System::Windows::Forms::Label^ Label_Nombre;
+	private: System::Windows::Forms::Button^ Bton_Limpiar;
 
 
 
@@ -91,6 +92,7 @@ namespace InterfazGrafica {
 			this->Label_DNI = (gcnew System::Windows::Forms::Label());
 			this->Label_Apellido = (gcnew System::Windows::Forms::Label());
 			this->Label_Nombre = (gcnew System::Windows::Forms::Label());
+			this->Bton_Limpiar = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// CodigoEmpleado_Label
@@ -151,7 +153,7 @@ namespace InterfazGrafica {
 			// 
 			// Bton_Guardar
 			// 
-			this->Bton_Guardar->Location = System::Drawing::Point(385, 359);
+			this->Bton_Guardar->Location = System::Drawing::Point(332, 359);
 			this->Bton_Guardar->Name = L"Bton_Guardar";
 			this->Bton_Guardar->Size = System::Drawing::Size(101, 34);
 			this->Bton_Guardar->TabIndex = 9;
@@ -162,9 +164,9 @@ namespace InterfazGrafica {
 			// Bton_Volver
 			// 
 			this->Bton_Volver->BackColor = System::Drawing::SystemColors::Control;
-			this->Bton_Volver->Location = System::Drawing::Point(289, 359);
+			this->Bton_Volver->Location = System::Drawing::Point(236, 359);
 			this->Bton_Volver->Name = L"Bton_Volver";
-			this->Bton_Volver->Size = System::Drawing::Size(90, 33);
+			this->Bton_Volver->Size = System::Drawing::Size(90, 34);
 			this->Bton_Volver->TabIndex = 10;
 			this->Bton_Volver->Text = L"Volver";
 			this->Bton_Volver->UseVisualStyleBackColor = false;
@@ -229,12 +231,23 @@ namespace InterfazGrafica {
 			this->Label_Nombre->TabIndex = 15;
 			this->Label_Nombre->Text = L"Nombre";
 			// 
+			// Bton_Limpiar
+			// 
+			this->Bton_Limpiar->Location = System::Drawing::Point(440, 359);
+			this->Bton_Limpiar->Name = L"Bton_Limpiar";
+			this->Bton_Limpiar->Size = System::Drawing::Size(101, 34);
+			this->Bton_Limpiar->TabIndex = 16;
+			this->Bton_Limpiar->Text = L"Limpiar";
+			this->Bton_Limpiar->UseVisualStyleBackColor = true;
+			this->Bton_Limpiar->Click += gcnew System::EventHandler(this, &FormularioAgregarEmpleado::Bton_Limpiar_Click);
+			// 
 			// FormularioAgregarEmpleado
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->ClientSize = System::Drawing::Size(661, 420);
+			this->Controls->Add(this->Bton_Limpiar);
 			this->Controls->Add(this->Label_Nombre);
 			this->Controls->Add(this->Label_Apellido);
 			this->Controls->Add(this->Label_DNI);
@@ -257,8 +270,15 @@ namespace InterfazGrafica {
 		}
 #pragma endregion
 
+		void Limpiar() {
+			
+			Txt_CodigoEmpleado->Clear();
+			Txt_Apellido->Clear();
+			Txt_Nombre->Clear();
+			Txt_DNI->Clear();
+			Box_Categoria->Items->Clear();
 
-
+	}
 
 	//Boton Volver, cierro el formulario.
 	private: System::Void Bton_Volver_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -270,6 +290,7 @@ namespace InterfazGrafica {
 		Empleado obj;
 		
 		int codigo = Int64::Parse(Txt_CodigoEmpleado->Text);
+		
 		obj.setcodigo_empleado(codigo);
 
 		System::String^ Nombre = Txt_Nombre->Text;
@@ -326,6 +347,12 @@ private: System::Void Txt_Apellido_KeyPress(System::Object^ sender, System::Wind
 		e->Handled = true;
 		return;
 	}
+}
+private: System::Void Bton_Limpiar_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	Limpiar();
+
+
 }
 };
 }

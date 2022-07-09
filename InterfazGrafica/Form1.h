@@ -38,7 +38,7 @@ namespace CppCLRWinformsProjekt {
 
 			//Creamos un objeto del formulario que vamos a abrir e invocamos a su metodo constructor.
 			InterfazGrafica::VentanaADM^ VentanaADM = gcnew InterfazGrafica::VentanaADM();
-
+			Txt_Codigo->Clear();
 			//Ocultamos el formulario anterior, llamamos al objeto y ponemos su visibilidad en false.
 			this->Visible = false;
 
