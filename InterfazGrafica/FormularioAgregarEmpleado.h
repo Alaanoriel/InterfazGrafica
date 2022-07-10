@@ -170,8 +170,7 @@ namespace InterfazGrafica {
 			// 
 			// Box_Categoria
 			// 
-			this->Box_Categoria->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(55)),
-				static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->Box_Categoria->BackColor = System::Drawing::Color::White;
 			this->Box_Categoria->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->Box_Categoria->FormattingEnabled = true;
 			this->Box_Categoria->Location = System::Drawing::Point(289, 280);

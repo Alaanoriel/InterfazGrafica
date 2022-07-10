@@ -44,6 +44,7 @@ namespace InterfazGrafica {
 	private: System::Windows::Forms::Button^ Bton_BuscarEmpleado;
 	private: System::Windows::Forms::Button^ Bton_Volver;
 	private: System::Windows::Forms::TextBox^ Txt_Mostrar;
+	private: System::Windows::Forms::Button^ Btn_Limpiar;
 
 
 
@@ -68,6 +69,7 @@ namespace InterfazGrafica {
 			this->Bton_BuscarEmpleado = (gcnew System::Windows::Forms::Button());
 			this->Bton_Volver = (gcnew System::Windows::Forms::Button());
 			this->Txt_Mostrar = (gcnew System::Windows::Forms::TextBox());
+			this->Btn_Limpiar = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// BuscarEmpleado_Label
@@ -81,17 +83,18 @@ namespace InterfazGrafica {
 			// 
 			// Txt_DNICOD
 			// 
-			this->Txt_DNICOD->Location = System::Drawing::Point(159, 24);
+			this->Txt_DNICOD->Location = System::Drawing::Point(27, 85);
 			this->Txt_DNICOD->MaxLength = 10;
+			this->Txt_DNICOD->Multiline = true;
 			this->Txt_DNICOD->Name = L"Txt_DNICOD";
-			this->Txt_DNICOD->Size = System::Drawing::Size(206, 20);
+			this->Txt_DNICOD->Size = System::Drawing::Size(351, 39);
 			this->Txt_DNICOD->TabIndex = 1;
 			// 
 			// Bton_BuscarEmpleado
 			// 
-			this->Bton_BuscarEmpleado->Location = System::Drawing::Point(275, 60);
+			this->Bton_BuscarEmpleado->Location = System::Drawing::Point(146, 130);
 			this->Bton_BuscarEmpleado->Name = L"Bton_BuscarEmpleado";
-			this->Bton_BuscarEmpleado->Size = System::Drawing::Size(90, 23);
+			this->Bton_BuscarEmpleado->Size = System::Drawing::Size(113, 33);
 			this->Bton_BuscarEmpleado->TabIndex = 2;
 			this->Bton_BuscarEmpleado->Text = L"Buscar";
 			this->Bton_BuscarEmpleado->UseVisualStyleBackColor = true;
@@ -99,9 +102,9 @@ namespace InterfazGrafica {
 			// 
 			// Bton_Volver
 			// 
-			this->Bton_Volver->Location = System::Drawing::Point(159, 60);
+			this->Bton_Volver->Location = System::Drawing::Point(27, 130);
 			this->Bton_Volver->Name = L"Bton_Volver";
-			this->Bton_Volver->Size = System::Drawing::Size(87, 23);
+			this->Bton_Volver->Size = System::Drawing::Size(113, 33);
 			this->Bton_Volver->TabIndex = 3;
 			this->Bton_Volver->Text = L"Volver";
 			this->Bton_Volver->UseVisualStyleBackColor = true;
@@ -109,11 +112,20 @@ namespace InterfazGrafica {
 			// 
 			// Txt_Mostrar
 			// 
-			this->Txt_Mostrar->Location = System::Drawing::Point(55, 103);
+			this->Txt_Mostrar->Location = System::Drawing::Point(27, 180);
 			this->Txt_Mostrar->Multiline = true;
 			this->Txt_Mostrar->Name = L"Txt_Mostrar";
-			this->Txt_Mostrar->Size = System::Drawing::Size(396, 109);
+			this->Txt_Mostrar->Size = System::Drawing::Size(622, 208);
 			this->Txt_Mostrar->TabIndex = 4;
+			// 
+			// Btn_Limpiar
+			// 
+			this->Btn_Limpiar->Location = System::Drawing::Point(265, 130);
+			this->Btn_Limpiar->Name = L"Btn_Limpiar";
+			this->Btn_Limpiar->Size = System::Drawing::Size(113, 33);
+			this->Btn_Limpiar->TabIndex = 5;
+			this->Btn_Limpiar->Text = L"Limpiar";
+			this->Btn_Limpiar->UseVisualStyleBackColor = true;
 			// 
 			// FormularioBuscarEmpleado
 			// 
@@ -121,6 +133,7 @@ namespace InterfazGrafica {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->ClientSize = System::Drawing::Size(661, 420);
+			this->Controls->Add(this->Btn_Limpiar);
 			this->Controls->Add(this->Txt_Mostrar);
 			this->Controls->Add(this->Bton_Volver);
 			this->Controls->Add(this->Bton_BuscarEmpleado);
