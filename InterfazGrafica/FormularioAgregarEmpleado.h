@@ -109,8 +109,7 @@ namespace InterfazGrafica {
 			// 
 			// Txt_CodigoEmpleado
 			// 
-			this->Txt_CodigoEmpleado->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(66)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->Txt_CodigoEmpleado->BackColor = System::Drawing::Color::White;
 			this->Txt_CodigoEmpleado->Location = System::Drawing::Point(289, 60);
 			this->Txt_CodigoEmpleado->MaxLength = 5;
 			this->Txt_CodigoEmpleado->Name = L"Txt_CodigoEmpleado";
@@ -120,8 +119,7 @@ namespace InterfazGrafica {
 			// 
 			// Txt_Nombre
 			// 
-			this->Txt_Nombre->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(55)),
-				static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->Txt_Nombre->BackColor = System::Drawing::Color::White;
 			this->Txt_Nombre->Location = System::Drawing::Point(289, 112);
 			this->Txt_Nombre->MaxLength = 10;
 			this->Txt_Nombre->Name = L"Txt_Nombre";
@@ -131,8 +129,7 @@ namespace InterfazGrafica {
 			// 
 			// Txt_Apellido
 			// 
-			this->Txt_Apellido->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(55)),
-				static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->Txt_Apellido->BackColor = System::Drawing::Color::White;
 			this->Txt_Apellido->Location = System::Drawing::Point(289, 168);
 			this->Txt_Apellido->MaxLength = 10;
 			this->Txt_Apellido->Name = L"Txt_Apellido";
@@ -142,8 +139,7 @@ namespace InterfazGrafica {
 			// 
 			// Txt_DNI
 			// 
-			this->Txt_DNI->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(55)),
-				static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->Txt_DNI->BackColor = System::Drawing::Color::White;
 			this->Txt_DNI->Location = System::Drawing::Point(289, 226);
 			this->Txt_DNI->MaxLength = 8;
 			this->Txt_DNI->Name = L"Txt_DNI";
@@ -270,6 +266,7 @@ namespace InterfazGrafica {
 		}
 #pragma endregion
 
+
 		void Limpiar() {
 			
 			Txt_CodigoEmpleado->Clear();
@@ -288,28 +285,108 @@ namespace InterfazGrafica {
 
 	private: System::Void Bton_Guardar_Click(System::Object^ sender, System::EventArgs^ e) {
 		Empleado obj;
+		switch(Validaciones())
+		{
+		case 0:
+		{
+			int codigo = Int64::Parse(Txt_CodigoEmpleado->Text);
+			obj.setcodigo_empleado(codigo);
+
+			System::String^ Nombre = Txt_Nombre->Text;
+			obj.setnombre_empleado(MarshalCadena(Nombre));
+
+			System::String^ Apellido = Txt_Apellido->Text;
+			obj.setapellido_empleado(MarshalCadena(Apellido));
+
+			int dni = Int64::Parse(Txt_DNI->Text);
+			obj.setdni_empleado(dni);
+
+			System::String^ Seleccion = Box_Categoria->SelectedItem->ToString();
+			obj.setcategoria_empleado(MarshalCadena(Seleccion));
+
+			obj.GrabarEmpleado();
+			MessageBox::Show("Empleado agreado", "Completado", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			return;
+			break;
+		}
+
+		case 1:
+		{
+			MessageBox::Show("Ingrese un codigo", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			break;
+		}
+
+		case 2:
+		{
+			MessageBox::Show("Ingrese un nombre", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			break;
+		}
+
+		case 3:
+		{
+			MessageBox::Show("Ingrese un apellido", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			break;
+		}
+
+		case 4:
+		{
+			MessageBox::Show("Ingrese un dni", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			break;
+		}
+
+		case 5:
+		{
+			MessageBox::Show("Ingrese una categoria", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			break;
 		
-		int codigo = Int64::Parse(Txt_CodigoEmpleado->Text);
-		
-		obj.setcodigo_empleado(codigo);
+		}
 
-		System::String^ Nombre = Txt_Nombre->Text;
-		obj.setnombre_empleado(MarshalCadena(Nombre));
-
-		System::String^ Apellido = Txt_Apellido->Text;
-		obj.setapellido_empleado(MarshalCadena(Apellido));
-
-		int dni = Int64::Parse(Txt_DNI->Text);
-		obj.setdni_empleado(dni);
-
-		System::String^ Seleccion = Box_Categoria->SelectedItem->ToString();
-		obj.setcategoria_empleado(MarshalCadena(Seleccion));
-
-
-		obj.GrabarEmpleado();
-		MessageBox::Show("Empleado agreado","Completado", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		return;
+		}
+	
 	}
+
+	 int Validaciones() {
+
+			   if (Txt_CodigoEmpleado->Text == "")
+			   {
+				   return 1;
+			   }
+
+			   else
+
+				   if (Txt_Nombre->Text == "")
+				   {
+
+					   return 2;
+				   }
+
+				   else
+
+					   if (Txt_Apellido->Text == "")
+					   {
+						   return 3;
+					   }
+
+					   else
+						   if (Txt_DNI->Text == "")
+						   {
+							   return 4;
+						   }
+
+						   else
+
+							   if (Box_Categoria->SelectedIndex <= -1)
+							   {
+								   return 5;
+							   }
+							   else
+							   {
+								   return 0;
+							   }
+
+		   }
+
+
 private: System::Void FormularioAgregarEmpleado_Load(System::Object^ sender, System::EventArgs^ e) {
 
 	Box_Categoria->Items->Add("Empleado");
