@@ -255,8 +255,9 @@ namespace InterfazGrafica {
 			this->Controls->Add(this->Txt_Nombre);
 			this->Controls->Add(this->Txt_CodigoEmpleado);
 			this->Controls->Add(this->CodigoEmpleado_Label);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedDialog;
 			this->Name = L"FormularioAgregarEmpleado";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Agregar nuevo empleado";
 			this->Load += gcnew System::EventHandler(this, &FormularioAgregarEmpleado::FormularioAgregarEmpleado_Load);
 			this->ResumeLayout(false);
@@ -264,7 +265,6 @@ namespace InterfazGrafica {
 
 		}
 #pragma endregion
-
 
 		void Limpiar() {
 			
@@ -278,7 +278,9 @@ namespace InterfazGrafica {
 
 	//Boton Volver, cierro el formulario.
 	private: System::Void Bton_Volver_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
+		FormularioAgregarEmpleado::Close();
+
+
 	}
 
 
@@ -305,7 +307,6 @@ namespace InterfazGrafica {
 
 			obj.GrabarEmpleado();
 			MessageBox::Show("Empleado agreado", "Completado", MessageBoxButtons::OK, MessageBoxIcon::Information);
-			return;
 			break;
 		}
 

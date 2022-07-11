@@ -1,7 +1,7 @@
 #pragma once
-#include "FormularioAgregarEmpleado.h"
 #include "Empleados.h"
 using namespace std;
+
 
 namespace InterfazGrafica {
 
@@ -37,19 +37,15 @@ namespace InterfazGrafica {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ BuscarEmpleado_Label;
-	private: System::Windows::Forms::TextBox^ Txt_DNICOD;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Label^ Txt_DNI;
 	protected:
 
-	private: System::Windows::Forms::Button^ Bton_BuscarEmpleado;
-	private: System::Windows::Forms::Button^ Bton_Volver;
-	private: System::Windows::Forms::TextBox^ Txt_Mostrar;
-	private: System::Windows::Forms::Button^ Btn_Limpiar;
-
-
-
-
-
+	private: System::Windows::Forms::Button^ Bton_Buscar;
+	private: System::Windows::Forms::Button^ Bton_Limpiar;
+	private: System::Windows::Forms::Button^ Bton_Salir;
+	private: System::Windows::Forms::ListView^ ListView_Empleado;
+	private: System::Windows::Forms::ListBox^ listBox1;
 
 	private:
 		/// <summary>
@@ -64,108 +60,133 @@ namespace InterfazGrafica {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->BuscarEmpleado_Label = (gcnew System::Windows::Forms::Label());
-			this->Txt_DNICOD = (gcnew System::Windows::Forms::TextBox());
-			this->Bton_BuscarEmpleado = (gcnew System::Windows::Forms::Button());
-			this->Bton_Volver = (gcnew System::Windows::Forms::Button());
-			this->Txt_Mostrar = (gcnew System::Windows::Forms::TextBox());
-			this->Btn_Limpiar = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->Txt_DNI = (gcnew System::Windows::Forms::Label());
+			this->Bton_Buscar = (gcnew System::Windows::Forms::Button());
+			this->Bton_Limpiar = (gcnew System::Windows::Forms::Button());
+			this->Bton_Salir = (gcnew System::Windows::Forms::Button());
+			this->ListView_Empleado = (gcnew System::Windows::Forms::ListView());
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->SuspendLayout();
 			// 
-			// BuscarEmpleado_Label
+			// textBox1
 			// 
-			this->BuscarEmpleado_Label->AutoSize = true;
-			this->BuscarEmpleado_Label->Location = System::Drawing::Point(24, 31);
-			this->BuscarEmpleado_Label->Name = L"BuscarEmpleado_Label";
-			this->BuscarEmpleado_Label->Size = System::Drawing::Size(112, 13);
-			this->BuscarEmpleado_Label->TabIndex = 0;
-			this->BuscarEmpleado_Label->Text = L"Ingresar DNI o Codigo";
+			this->textBox1->Location = System::Drawing::Point(132, 40);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(237, 20);
+			this->textBox1->TabIndex = 0;
 			// 
-			// Txt_DNICOD
+			// Txt_DNI
 			// 
-			this->Txt_DNICOD->Location = System::Drawing::Point(27, 85);
-			this->Txt_DNICOD->MaxLength = 10;
-			this->Txt_DNICOD->Multiline = true;
-			this->Txt_DNICOD->Name = L"Txt_DNICOD";
-			this->Txt_DNICOD->Size = System::Drawing::Size(351, 39);
-			this->Txt_DNICOD->TabIndex = 1;
+			this->Txt_DNI->AutoSize = true;
+			this->Txt_DNI->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->Txt_DNI->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Txt_DNI->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->Txt_DNI->Location = System::Drawing::Point(12, 40);
+			this->Txt_DNI->Name = L"Txt_DNI";
+			this->Txt_DNI->Size = System::Drawing::Size(114, 23);
+			this->Txt_DNI->TabIndex = 1;
+			this->Txt_DNI->Text = L"Ingrese DNI";
 			// 
-			// Bton_BuscarEmpleado
+			// Bton_Buscar
 			// 
-			this->Bton_BuscarEmpleado->Location = System::Drawing::Point(146, 130);
-			this->Bton_BuscarEmpleado->Name = L"Bton_BuscarEmpleado";
-			this->Bton_BuscarEmpleado->Size = System::Drawing::Size(113, 33);
-			this->Bton_BuscarEmpleado->TabIndex = 2;
-			this->Bton_BuscarEmpleado->Text = L"Buscar";
-			this->Bton_BuscarEmpleado->UseVisualStyleBackColor = true;
-			this->Bton_BuscarEmpleado->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &FormularioBuscarEmpleado::Bton_BuscarEmpleado_KeyPress);
+			this->Bton_Buscar->Location = System::Drawing::Point(132, 66);
+			this->Bton_Buscar->Name = L"Bton_Buscar";
+			this->Bton_Buscar->Size = System::Drawing::Size(75, 23);
+			this->Bton_Buscar->TabIndex = 2;
+			this->Bton_Buscar->Text = L"Buscar";
+			this->Bton_Buscar->UseVisualStyleBackColor = true;
+			this->Bton_Buscar->Click += gcnew System::EventHandler(this, &FormularioBuscarEmpleado::Bton_Buscar_Click);
 			// 
-			// Bton_Volver
+			// Bton_Limpiar
 			// 
-			this->Bton_Volver->Location = System::Drawing::Point(27, 130);
-			this->Bton_Volver->Name = L"Bton_Volver";
-			this->Bton_Volver->Size = System::Drawing::Size(113, 33);
-			this->Bton_Volver->TabIndex = 3;
-			this->Bton_Volver->Text = L"Volver";
-			this->Bton_Volver->UseVisualStyleBackColor = true;
-			this->Bton_Volver->Click += gcnew System::EventHandler(this, &FormularioBuscarEmpleado::Bton_Volver_Click);
+			this->Bton_Limpiar->Location = System::Drawing::Point(213, 66);
+			this->Bton_Limpiar->Name = L"Bton_Limpiar";
+			this->Bton_Limpiar->Size = System::Drawing::Size(75, 23);
+			this->Bton_Limpiar->TabIndex = 3;
+			this->Bton_Limpiar->Text = L"Limpiar";
+			this->Bton_Limpiar->UseVisualStyleBackColor = true;
+			this->Bton_Limpiar->Click += gcnew System::EventHandler(this, &FormularioBuscarEmpleado::Bton_Limpiar_Click);
 			// 
-			// Txt_Mostrar
+			// Bton_Salir
 			// 
-			this->Txt_Mostrar->Location = System::Drawing::Point(27, 180);
-			this->Txt_Mostrar->Multiline = true;
-			this->Txt_Mostrar->Name = L"Txt_Mostrar";
-			this->Txt_Mostrar->Size = System::Drawing::Size(622, 208);
-			this->Txt_Mostrar->TabIndex = 4;
+			this->Bton_Salir->Location = System::Drawing::Point(294, 66);
+			this->Bton_Salir->Name = L"Bton_Salir";
+			this->Bton_Salir->Size = System::Drawing::Size(75, 23);
+			this->Bton_Salir->TabIndex = 4;
+			this->Bton_Salir->Text = L"Salir";
+			this->Bton_Salir->UseVisualStyleBackColor = true;
 			// 
-			// Btn_Limpiar
+			// ListView_Empleado
 			// 
-			this->Btn_Limpiar->Location = System::Drawing::Point(265, 130);
-			this->Btn_Limpiar->Name = L"Btn_Limpiar";
-			this->Btn_Limpiar->Size = System::Drawing::Size(113, 33);
-			this->Btn_Limpiar->TabIndex = 5;
-			this->Btn_Limpiar->Text = L"Limpiar";
-			this->Btn_Limpiar->UseVisualStyleBackColor = true;
+			this->ListView_Empleado->HideSelection = false;
+			this->ListView_Empleado->Location = System::Drawing::Point(16, 112);
+			this->ListView_Empleado->Name = L"ListView_Empleado";
+			this->ListView_Empleado->Size = System::Drawing::Size(366, 143);
+			this->ListView_Empleado->TabIndex = 5;
+			this->ListView_Empleado->UseCompatibleStateImageBehavior = false;
+			// 
+			// listBox1
+			// 
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"a" });
+			this->listBox1->Location = System::Drawing::Point(427, 22);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->Size = System::Drawing::Size(374, 134);
+			this->listBox1->TabIndex = 6;
 			// 
 			// FormularioBuscarEmpleado
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->ClientSize = System::Drawing::Size(661, 420);
-			this->Controls->Add(this->Btn_Limpiar);
-			this->Controls->Add(this->Txt_Mostrar);
-			this->Controls->Add(this->Bton_Volver);
-			this->Controls->Add(this->Bton_BuscarEmpleado);
-			this->Controls->Add(this->Txt_DNICOD);
-			this->Controls->Add(this->BuscarEmpleado_Label);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->ClientSize = System::Drawing::Size(856, 418);
+			this->Controls->Add(this->listBox1);
+			this->Controls->Add(this->ListView_Empleado);
+			this->Controls->Add(this->Bton_Salir);
+			this->Controls->Add(this->Bton_Limpiar);
+			this->Controls->Add(this->Bton_Buscar);
+			this->Controls->Add(this->Txt_DNI);
+			this->Controls->Add(this->textBox1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedDialog;
 			this->Name = L"FormularioBuscarEmpleado";
-			this->Text = L"FormularioBuscarEmpleado";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"Buscar empleado";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void Bton_Volver_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
+	private: System::Void Bton_Limpiar_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void Bton_BuscarEmpleado_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
-		Empleado obj;
-		int DNICOD = Int64::Parse(Txt_DNICOD->Text);
-		int pos = 0;
-		while(obj.LeerDiscoEmpleado(pos++))
+
+
+private: System::Void Bton_Buscar_Click(System::Object^ sender, System::EventArgs^ e) {
+	Empleado obj;
+	int pos = 0;
+	int DNI = Int64::Parse(textBox1->Text);
+
+	try{
+		while (obj.LeerDiscoEmpleado(pos++))
 		{
-			if( (obj.getcodigo_empleado()==DNICOD) || (obj.getdni_empleado() == DNICOD) )
+			if (DNI == obj.getdni_empleado())
 			{
-			
+				//System::Object^ aux;
+
+				listBox1->Items->Add("hola");
+				//ListView_Empleado->Items->Add(obj.getdni_empleado());
+
 			}
-		
-		
+
 		}
-		MessageBox::Show("No existe el empleado", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		return;
 
 	}
+	catch(exception e){
+
+	}
+	
+
+}
 };
 }

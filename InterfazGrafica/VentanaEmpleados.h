@@ -1,8 +1,8 @@
 #pragma once
 #include "FormularioAgregarEmpleado.h"
-#include "FormularioBuscarEmpleado.h"
 #include "FormularioBajaTemporalEmpleado.h"
 #include "FormularioBajaTotalEmpleado.h"
+#include "FormularioBuscarEmpleado.h"
 
 namespace InterfazGrafica {
 
@@ -159,40 +159,27 @@ namespace InterfazGrafica {
 
 		}
 #pragma endregion
-	public:
-		Form^ ActualADM;
-		void AbrirFormulario(Form^ FormularioHijoADM)
-		{
-			if (this->ActualADM != nullptr)
-				{
-					this->ActualADM->Close();
-				}
-				VentanaEmpleados::Controls->Clear();
-				this->ActualADM = FormularioHijoADM;
-				FormularioHijoADM->Dock = DockStyle::Fill;
-				FormularioHijoADM->TopLevel = false;
-				this->Controls->Add(FormularioHijoADM);
-				this->Tag = FormularioHijoADM;
-				FormularioHijoADM->Show();
-
-		}
+	
 
 	private: System::Void Boton_NuevoEmpleado_Click(System::Object^ sender, System::EventArgs^ e) {
 		
-		this->AbrirFormulario(gcnew InterfazGrafica::FormularioAgregarEmpleado());
+		InterfazGrafica::FormularioAgregarEmpleado^ FormularioAgregarEmpleado = gcnew InterfazGrafica::FormularioAgregarEmpleado();
+		FormularioAgregarEmpleado->ShowDialog();
+
 	}
 
 private: System::Void Boton_BuscarEmpleado_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->AbrirFormulario(gcnew InterfazGrafica::FormularioBuscarEmpleado());
+	InterfazGrafica::FormularioBuscarEmpleado^ FormularioBuscarEmpleado = gcnew InterfazGrafica::FormularioBuscarEmpleado();
+	FormularioBuscarEmpleado->ShowDialog();
 }
 
 
 private: System::Void Boton_Bajatemporal_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->AbrirFormulario(gcnew InterfazGrafica::FormularioBajaTemporalEmpleado());
+	
 }
 
 private: System::Void Boton_BajaTotal_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->AbrirFormulario(gcnew InterfazGrafica::FormularioBajaTotalEmpleado());
+	
 }
 
 };

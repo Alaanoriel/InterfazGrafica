@@ -1,6 +1,5 @@
 #pragma once
 #include "FormularioAgregarEmpleado.h"
-#include "FormularioBuscarEmpleado.h"
 #include "VentanaEmpleados.h"
 #include "VentanaVENDER.h"
 #include "VentanaProductos.h"
