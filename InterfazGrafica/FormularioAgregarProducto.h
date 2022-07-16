@@ -57,6 +57,7 @@ namespace InterfazGrafica {
 	private: System::Windows::Forms::TextBox^ TxtBox_Codigo;
 	private: System::Windows::Forms::Button^ Boton_Guardar;
 	private: System::Windows::Forms::Button^ Boton_Limpiar;
+	private: System::Windows::Forms::Button^ Boton_Salir;
 
 
 
@@ -96,6 +97,7 @@ namespace InterfazGrafica {
 			this->TxtBox_Codigo = (gcnew System::Windows::Forms::TextBox());
 			this->Boton_Guardar = (gcnew System::Windows::Forms::Button());
 			this->Boton_Limpiar = (gcnew System::Windows::Forms::Button());
+			this->Boton_Salir = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// Box_Marca
@@ -237,7 +239,7 @@ namespace InterfazGrafica {
 			// 
 			// Boton_Guardar
 			// 
-			this->Boton_Guardar->Location = System::Drawing::Point(511, 200);
+			this->Boton_Guardar->Location = System::Drawing::Point(524, 201);
 			this->Boton_Guardar->Name = L"Boton_Guardar";
 			this->Boton_Guardar->Size = System::Drawing::Size(90, 23);
 			this->Boton_Guardar->TabIndex = 28;
@@ -246,19 +248,31 @@ namespace InterfazGrafica {
 			// 
 			// Boton_Limpiar
 			// 
-			this->Boton_Limpiar->Location = System::Drawing::Point(618, 200);
+			this->Boton_Limpiar->Location = System::Drawing::Point(620, 201);
 			this->Boton_Limpiar->Name = L"Boton_Limpiar";
 			this->Boton_Limpiar->Size = System::Drawing::Size(90, 23);
 			this->Boton_Limpiar->TabIndex = 29;
 			this->Boton_Limpiar->Text = L"Limpiar";
 			this->Boton_Limpiar->UseVisualStyleBackColor = true;
+			this->Boton_Limpiar->Click += gcnew System::EventHandler(this, &FormularioAgregarProducto::Boton_Limpiar_Click);
+			// 
+			// Boton_Salir
+			// 
+			this->Boton_Salir->Location = System::Drawing::Point(428, 201);
+			this->Boton_Salir->Name = L"Boton_Salir";
+			this->Boton_Salir->Size = System::Drawing::Size(90, 23);
+			this->Boton_Salir->TabIndex = 30;
+			this->Boton_Salir->Text = L"Salir";
+			this->Boton_Salir->UseVisualStyleBackColor = true;
+			this->Boton_Salir->Click += gcnew System::EventHandler(this, &FormularioAgregarProducto::Boton_Salir_Click);
 			// 
 			// FormularioAgregarProducto
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->ClientSize = System::Drawing::Size(784, 279);
+			this->ClientSize = System::Drawing::Size(714, 239);
+			this->Controls->Add(this->Boton_Salir);
 			this->Controls->Add(this->Boton_Limpiar);
 			this->Controls->Add(this->Boton_Guardar);
 			this->Controls->Add(this->TxtBox_Codigo);
@@ -284,5 +298,29 @@ namespace InterfazGrafica {
 
 		}
 #pragma endregion
-	};
+		void Limpiar() {
+
+			TxtBox_Codigo->Clear();
+			TxtBox_Nombre->Clear();
+			TxtBox_Color->Clear();
+			TxtBox_Precio->Clear();
+			TxtBox_Talle->Clear();
+			TxtBox_Stock->Clear();
+
+		}
+
+
+	private: System::Void Boton_Limpiar_Click(System::Object^ sender, System::EventArgs^ e) {
+		Limpiar();
+
+	}
+	
+	
+
+
+private: System::Void Boton_Salir_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Close();
+}
+};
 }
