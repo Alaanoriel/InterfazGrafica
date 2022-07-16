@@ -1,12 +1,13 @@
 #pragma once
-
+#include <string>
 
 
 class Producto {
 private:
 	int codigo_producto;
-	char nombre_producto[30];
-	char color_producto[15];
+	std::string nombre_producto;
+	std::string color_producto;
+	std::string marca_producto;
 	int talle_producto;
 	int stock_producto;
 	float precio_producto;
@@ -15,17 +16,19 @@ private:
 public:
 	//Declaro los get
 	int getcodigo_producto() { return codigo_producto; }
-	char* getnombre_producto() { return nombre_producto; }
-	char* getcolor_producto() { return color_producto; }
+	std::string getnombre_producto() { return nombre_producto; }
+	std::string getcolor_producto() { return color_producto; }
 	int gettalle_producto() { return talle_producto; }
+	std::string getmarca_producto() { return marca_producto; }
 	int getstock_producto() { return stock_producto; }
 	float getprecio_producto() { return precio_producto; }
 	bool getestado_producto() { return estado_producto; }
 
 	//Declaro set
 	void setcodigo_producto(int CodigoProducto) { codigo_producto = CodigoProducto; }
-	void setnombre_producto(char* NombreProducto) { strcpy(nombre_producto,NombreProducto); }
-	void setcolor_producto(char* Color) { strcpy(color_producto, Color); }
+	void setnombre_producto(std::string NombreProducto) { nombre_producto = NombreProducto; }
+	void setcolor_producto(std::string Color) { color_producto = Color; }
+	void setmarca_pruducto(std::string Marca) { marca_producto = Marca; }
 	void settalle_producto(int Talle) { talle_producto = Talle; }
 	void setstock_producto(int Stock) { stock_producto = Stock; }
 	void setprecio_producto(int Precio) { precio_producto = Precio; }
@@ -37,16 +40,4 @@ public:
 	
 	/// leeo
 	bool LeerDiscoProd(int Posicion);
-
-
-	void operator =(Producto prod)
-	{
-		codigo_producto = prod.getcodigo_producto();
-		strcpy(nombre_producto, prod.getnombre_producto());
-		strcpy(color_producto, prod.getcolor_producto());
-		talle_producto = prod.gettalle_producto();
-		stock_producto = prod.getprecio_producto();
-		precio_producto = prod.getprecio_producto();
-
-	}
 };

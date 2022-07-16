@@ -44,8 +44,8 @@ namespace InterfazGrafica {
 	private: System::Windows::Forms::Button^ Bton_Buscar;
 	private: System::Windows::Forms::Button^ Bton_Limpiar;
 	private: System::Windows::Forms::Button^ Bton_Salir;
-	private: System::Windows::Forms::ListView^ ListView_Empleado;
-	private: System::Windows::Forms::ListBox^ listBox1;
+
+
 
 	private:
 		/// <summary>
@@ -65,8 +65,6 @@ namespace InterfazGrafica {
 			this->Bton_Buscar = (gcnew System::Windows::Forms::Button());
 			this->Bton_Limpiar = (gcnew System::Windows::Forms::Button());
 			this->Bton_Salir = (gcnew System::Windows::Forms::Button());
-			this->ListView_Empleado = (gcnew System::Windows::Forms::ListView());
-			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->SuspendLayout();
 			// 
 			// textBox1
@@ -118,32 +116,12 @@ namespace InterfazGrafica {
 			this->Bton_Salir->Text = L"Salir";
 			this->Bton_Salir->UseVisualStyleBackColor = true;
 			// 
-			// ListView_Empleado
-			// 
-			this->ListView_Empleado->HideSelection = false;
-			this->ListView_Empleado->Location = System::Drawing::Point(16, 112);
-			this->ListView_Empleado->Name = L"ListView_Empleado";
-			this->ListView_Empleado->Size = System::Drawing::Size(366, 143);
-			this->ListView_Empleado->TabIndex = 5;
-			this->ListView_Empleado->UseCompatibleStateImageBehavior = false;
-			// 
-			// listBox1
-			// 
-			this->listBox1->FormattingEnabled = true;
-			this->listBox1->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"a" });
-			this->listBox1->Location = System::Drawing::Point(427, 22);
-			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(374, 134);
-			this->listBox1->TabIndex = 6;
-			// 
 			// FormularioBuscarEmpleado
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->ClientSize = System::Drawing::Size(856, 418);
-			this->Controls->Add(this->listBox1);
-			this->Controls->Add(this->ListView_Empleado);
 			this->Controls->Add(this->Bton_Salir);
 			this->Controls->Add(this->Bton_Limpiar);
 			this->Controls->Add(this->Bton_Buscar);
@@ -163,28 +141,7 @@ namespace InterfazGrafica {
 
 
 private: System::Void Bton_Buscar_Click(System::Object^ sender, System::EventArgs^ e) {
-	Empleado obj;
-	int pos = 0;
-	int DNI = Int64::Parse(textBox1->Text);
-
-	try{
-		while (obj.LeerDiscoEmpleado(pos++))
-		{
-			if (DNI == obj.getdni_empleado())
-			{
-				//System::Object^ aux;
-
-				listBox1->Items->Add("hola");
-				//ListView_Empleado->Items->Add(obj.getdni_empleado());
-
-			}
-
-		}
-
-	}
-	catch(exception e){
-
-	}
+	
 	
 
 }
