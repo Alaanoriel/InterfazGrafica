@@ -28,7 +28,7 @@ public:
 	void setcodigo_producto(int CodigoProducto) { codigo_producto = CodigoProducto; }
 	void setnombre_producto(std::string NombreProducto) { nombre_producto = NombreProducto; }
 	void setcolor_producto(std::string Color) { color_producto = Color; }
-	void setmarca_pruducto(std::string Marca) { marca_producto = Marca; }
+	void setmarca_producto(std::string Marca) { marca_producto = Marca; }
 	void settalle_producto(int Talle) { talle_producto = Talle; }
 	void setstock_producto(int Stock) { stock_producto = Stock; }
 	void setprecio_producto(int Precio) { precio_producto = Precio; }

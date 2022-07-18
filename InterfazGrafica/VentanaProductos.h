@@ -157,43 +157,24 @@ namespace InterfazGrafica {
 
 		}
 #pragma endregion
-		public:
-			Form^ ActualPROD;
-			void AbrirFormulario(Form^ FormularioHijoPROD)
-			{
-				if (this->ActualPROD != nullptr)
-				{
-					this->ActualPROD->Close();
-				}
-				VentanaProductos::Controls->Clear();
-				this->ActualPROD = FormularioHijoPROD;
-				FormularioHijoPROD->Dock = DockStyle::Fill;
-				FormularioHijoPROD->TopLevel = false;
-				this->Controls->Add(FormularioHijoPROD);
-				this->Tag = FormularioHijoPROD;
-				FormularioHijoPROD->Show();
-
-			}
-
-
-
+		
 
 private: System::Void Boton_NuevoProducto_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->AbrirFormulario(gcnew InterfazGrafica::FormularioAgregarProducto());
-
+		InterfazGrafica::FormularioAgregarProducto^ FormularioAgregarProducto = gcnew InterfazGrafica::FormularioAgregarProducto();
+		FormularioAgregarProducto->ShowDialog();
 }
 
 private: System::Void Boton_BuscarProducto_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->AbrirFormulario(gcnew InterfazGrafica::FormularioBuscarProducto());
+	
 
 	   }
 
 private: System::Void Boton_Bajaprod_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->AbrirFormulario(gcnew InterfazGrafica::FormularioBajaTemporalProducto());
+	
 
 }
 private: System::Void Boton_BajaTotal_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->AbrirFormulario(gcnew InterfazGrafica::FormularioBajaTotalProducto());
+	
 }
 };
 }

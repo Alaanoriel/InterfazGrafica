@@ -1,4 +1,10 @@
 #pragma once
+#include <iostream>
+#include <msclr\marshal_cppstd.h>
+#include <string>
+#include <cstring>
+#include "Producto.h"
+using namespace std;
 
 namespace InterfazGrafica {
 
@@ -21,6 +27,12 @@ namespace InterfazGrafica {
 			//
 			//TODO: agregar código de constructor aquí
 			//
+		}
+
+		string MarshalCadena(System::String^ transformar)
+		{
+			std::string cad = msclr::interop::marshal_as<std::string>(transformar);
+			return cad;
 		}
 
 	protected:
@@ -106,7 +118,7 @@ namespace InterfazGrafica {
 			this->Box_Marca->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->Box_Marca->ForeColor = System::Drawing::SystemColors::Menu;
 			this->Box_Marca->FormattingEnabled = true;
-			this->Box_Marca->Location = System::Drawing::Point(175, 25);
+			this->Box_Marca->Location = System::Drawing::Point(149, 25);
 			this->Box_Marca->Name = L"Box_Marca";
 			this->Box_Marca->Size = System::Drawing::Size(197, 21);
 			this->Box_Marca->TabIndex = 12;
@@ -117,7 +129,7 @@ namespace InterfazGrafica {
 			this->Txt_Marca->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Txt_Marca->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->Txt_Marca->Location = System::Drawing::Point(59, 25);
+			this->Txt_Marca->Location = System::Drawing::Point(41, 25);
 			this->Txt_Marca->Name = L"Txt_Marca";
 			this->Txt_Marca->Size = System::Drawing::Size(81, 23);
 			this->Txt_Marca->TabIndex = 13;
@@ -129,7 +141,7 @@ namespace InterfazGrafica {
 			this->Txt_Talle->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Txt_Talle->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->Txt_Talle->Location = System::Drawing::Point(59, 201);
+			this->Txt_Talle->Location = System::Drawing::Point(41, 201);
 			this->Txt_Talle->Name = L"Txt_Talle";
 			this->Txt_Talle->Size = System::Drawing::Size(81, 23);
 			this->Txt_Talle->TabIndex = 14;
@@ -141,7 +153,7 @@ namespace InterfazGrafica {
 			this->Txt_Color->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Txt_Color->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->Txt_Color->Location = System::Drawing::Point(59, 137);
+			this->Txt_Color->Location = System::Drawing::Point(41, 137);
 			this->Txt_Color->Name = L"Txt_Color";
 			this->Txt_Color->Size = System::Drawing::Size(81, 23);
 			this->Txt_Color->TabIndex = 15;
@@ -153,7 +165,7 @@ namespace InterfazGrafica {
 			this->Txt_Nombre->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Txt_Nombre->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->Txt_Nombre->Location = System::Drawing::Point(59, 79);
+			this->Txt_Nombre->Location = System::Drawing::Point(39, 79);
 			this->Txt_Nombre->Name = L"Txt_Nombre";
 			this->Txt_Nombre->Size = System::Drawing::Size(101, 23);
 			this->Txt_Nombre->TabIndex = 16;
@@ -161,21 +173,21 @@ namespace InterfazGrafica {
 			// 
 			// TxtBox_Nombre
 			// 
-			this->TxtBox_Nombre->Location = System::Drawing::Point(175, 82);
+			this->TxtBox_Nombre->Location = System::Drawing::Point(149, 82);
 			this->TxtBox_Nombre->Name = L"TxtBox_Nombre";
 			this->TxtBox_Nombre->Size = System::Drawing::Size(197, 20);
 			this->TxtBox_Nombre->TabIndex = 17;
 			// 
 			// TxtBox_Color
 			// 
-			this->TxtBox_Color->Location = System::Drawing::Point(175, 143);
+			this->TxtBox_Color->Location = System::Drawing::Point(149, 143);
 			this->TxtBox_Color->Name = L"TxtBox_Color";
 			this->TxtBox_Color->Size = System::Drawing::Size(197, 20);
 			this->TxtBox_Color->TabIndex = 18;
 			// 
 			// TxtBox_Talle
 			// 
-			this->TxtBox_Talle->Location = System::Drawing::Point(175, 204);
+			this->TxtBox_Talle->Location = System::Drawing::Point(149, 203);
 			this->TxtBox_Talle->Name = L"TxtBox_Talle";
 			this->TxtBox_Talle->Size = System::Drawing::Size(197, 20);
 			this->TxtBox_Talle->TabIndex = 19;
@@ -245,6 +257,7 @@ namespace InterfazGrafica {
 			this->Boton_Guardar->TabIndex = 28;
 			this->Boton_Guardar->Text = L"Guardar";
 			this->Boton_Guardar->UseVisualStyleBackColor = true;
+			this->Boton_Guardar->Click += gcnew System::EventHandler(this, &FormularioAgregarProducto::Boton_Guardar_Click);
 			// 
 			// Boton_Limpiar
 			// 
@@ -271,7 +284,7 @@ namespace InterfazGrafica {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->ClientSize = System::Drawing::Size(714, 239);
+			this->ClientSize = System::Drawing::Size(772, 266);
 			this->Controls->Add(this->Boton_Salir);
 			this->Controls->Add(this->Boton_Limpiar);
 			this->Controls->Add(this->Boton_Guardar);
@@ -298,6 +311,9 @@ namespace InterfazGrafica {
 
 		}
 #pragma endregion
+
+		
+
 		void Limpiar() {
 
 			TxtBox_Codigo->Clear();
@@ -322,5 +338,142 @@ private: System::Void Boton_Salir_Click(System::Object^ sender, System::EventArg
 
 	this->Close();
 }
+private: System::Void Boton_Guardar_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	Producto aux;
+	switch (Validaciones())
+	{
+	case 0:
+	{
+
+		System::String^ Seleccion = Box_Marca->SelectedItem->ToString();
+		aux.setmarca_producto(MarshalCadena(Seleccion));
+
+		System::String^ Nombre = TxtBox_Nombre->Text;
+		aux.setnombre_producto(MarshalCadena(Nombre));
+		
+		System::String^ Color = TxtBox_Color->Text;
+		aux.setcolor_producto(MarshalCadena(Color));
+
+		int Talle = Int64::Parse(TxtBox_Talle->Text);
+		aux.settalle_producto(Talle);
+
+		int Stock = Int64::Parse(TxtBox_Stock->Text);
+		aux.setstock_producto(Stock);
+
+		int Precio = Int64::Parse(TxtBox_Precio->Text);
+		aux.setprecio_producto(Precio);
+
+		int Codigo = Int64::Parse(TxtBox_Codigo->Text);
+		aux.setcodigo_producto(Codigo);
+
+		//aux.GrabarProducto(); Si lo dejo tira error, revisar
+
+		MessageBox::Show("Producto agreado", "Completado", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		break;
+	}
+
+	case 1:
+	{
+		MessageBox::Show("Seleccione una marca", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		break;
+	}
+
+	case 2:
+	{
+		MessageBox::Show("Ingrese un nombre", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		break;
+	}
+
+	case 3:
+	{
+		MessageBox::Show("Ingrese un color", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		break;
+	}
+
+	case 4:
+	{
+		MessageBox::Show("Ingrese un talle", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		break;
+	}
+
+	case 5:
+	{
+		MessageBox::Show("Ingrese stock", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		break;
+
+	}
+
+	case 6:
+	{
+	
+		MessageBox::Show("Ingrese precio", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		break;
+
+	}	
+
+	case 7:
+	{
+		MessageBox::Show("Ingrese el codigo", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		break;
+	
+	}
+
+	}
+
+
+}
+
+	   int Validaciones() {
+
+		   if (Box_Marca->SelectedIndex <= -1)
+		   {
+			   return 1;
+		   }
+
+		   else
+
+			   if (TxtBox_Nombre->Text == "")
+			   {
+
+				   return 2;
+			   }
+
+			   else
+
+				   if (TxtBox_Color->Text == "")
+				   {
+					   return 3;
+				   }
+
+				   else
+					   if (TxtBox_Talle->Text == "")
+					   {
+						   return 4;
+					   }
+
+					   else
+
+						   if (TxtBox_Stock->Text == "")
+						   {
+							   return 5;
+						   }
+						   else
+							   if (TxtBox_Precio->Text == "")
+							   {
+								   return 6;
+							   }
+							   else
+								   if (TxtBox_Codigo->Text == "")
+								   {
+									   return 7;
+								   }
+								   else
+									   return 0;
+	   }
+
+
+
+
 };
 }
