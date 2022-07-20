@@ -67,7 +67,7 @@ namespace InterfazGrafica {
 			this->Txt_Dni->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Txt_Dni->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->Txt_Dni->Location = System::Drawing::Point(12, 56);
+			this->Txt_Dni->Location = System::Drawing::Point(12, 36);
 			this->Txt_Dni->Name = L"Txt_Dni";
 			this->Txt_Dni->Size = System::Drawing::Size(141, 23);
 			this->Txt_Dni->TabIndex = 0;
@@ -75,23 +75,24 @@ namespace InterfazGrafica {
 			// 
 			// TxtBox_BajaTotal
 			// 
-			this->TxtBox_BajaTotal->Location = System::Drawing::Point(166, 61);
+			this->TxtBox_BajaTotal->Location = System::Drawing::Point(180, 36);
 			this->TxtBox_BajaTotal->Name = L"TxtBox_BajaTotal";
 			this->TxtBox_BajaTotal->Size = System::Drawing::Size(237, 20);
 			this->TxtBox_BajaTotal->TabIndex = 1;
 			// 
 			// Bton_Baja
 			// 
-			this->Bton_Baja->Location = System::Drawing::Point(166, 100);
+			this->Bton_Baja->Location = System::Drawing::Point(180, 62);
 			this->Bton_Baja->Name = L"Bton_Baja";
 			this->Bton_Baja->Size = System::Drawing::Size(75, 23);
 			this->Bton_Baja->TabIndex = 2;
 			this->Bton_Baja->Text = L"Dar de baja";
 			this->Bton_Baja->UseVisualStyleBackColor = true;
+			this->Bton_Baja->Click += gcnew System::EventHandler(this, &FormularioBajaTotalEmpleado::Bton_Baja_Click);
 			// 
 			// Bton_Salir
 			// 
-			this->Bton_Salir->Location = System::Drawing::Point(247, 100);
+			this->Bton_Salir->Location = System::Drawing::Point(261, 62);
 			this->Bton_Salir->Name = L"Bton_Salir";
 			this->Bton_Salir->Size = System::Drawing::Size(75, 23);
 			this->Bton_Salir->TabIndex = 3;
@@ -101,7 +102,7 @@ namespace InterfazGrafica {
 			// 
 			// Bton_Limpiar
 			// 
-			this->Bton_Limpiar->Location = System::Drawing::Point(328, 100);
+			this->Bton_Limpiar->Location = System::Drawing::Point(342, 62);
 			this->Bton_Limpiar->Name = L"Bton_Limpiar";
 			this->Bton_Limpiar->Size = System::Drawing::Size(75, 23);
 			this->Bton_Limpiar->TabIndex = 4;
@@ -114,7 +115,7 @@ namespace InterfazGrafica {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->ClientSize = System::Drawing::Size(556, 163);
+			this->ClientSize = System::Drawing::Size(556, 128);
 			this->Controls->Add(this->Bton_Limpiar);
 			this->Controls->Add(this->Bton_Salir);
 			this->Controls->Add(this->Bton_Baja);
@@ -139,6 +140,10 @@ namespace InterfazGrafica {
 private: System::Void Bton_Salir_Click(System::Object^ sender, System::EventArgs^ e) {
 	
 	this->Close();
+
+}
+private: System::Void Bton_Baja_Click(System::Object^ sender, System::EventArgs^ e) {
+
 
 }
 };
