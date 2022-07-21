@@ -14,11 +14,13 @@ inline bool Producto::GrabarProducto()
 {
 		FILE* GProducto;
 		GProducto = fopen("Archivos/Productos.txt", "ab");
-		if (GProducto == NULL) return false;
-
-		bool escribio = fwrite(this, sizeof * this, 1, GProducto);
+		if (GProducto == NULL)
+		{
+			return false;
+		}
+		fwrite(this, sizeof * this, 1, GProducto);
 		fclose(GProducto);
-		return escribio;
+		return true;
 }
 
 inline bool Producto::LeerDiscoProd(int Posicion)
