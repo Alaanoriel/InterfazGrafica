@@ -286,7 +286,7 @@ namespace InterfazGrafica {
 
 	private: System::Void Bton_Guardar_Click(System::Object^ sender, System::EventArgs^ e) {
 		Empleado obj;
-		switch(Validaciones())
+		switch (Validaciones())
 		{
 		case 0:
 		{

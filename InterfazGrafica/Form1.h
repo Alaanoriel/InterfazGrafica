@@ -33,6 +33,17 @@ namespace CppCLRWinformsProjekt {
 			//
 		}
 
+		bool cargarEmpleados(int pos, Empleado obj)
+		{
+			FILE* P;
+			P = fopen("Datos.txt", "rb");
+			if (P == NULL) return false;
+			fseek(P, pos * sizeof(Empleado), 0);
+			bool leyo = fread(&obj, sizeof(Empleado), 1, P);
+			fclose(P);
+			return leyo;
+		}
+
 
 		Void Ventana() {
 
@@ -210,23 +221,20 @@ namespace CppCLRWinformsProjekt {
 		int CodigoIngresado = Int64::Parse(Txt_Codigo->Text);
 		int pos = 0;
 			//int pos = 0;
-			while (obj.LeerDiscoEmpleado(pos++)) 
-			{
-				if (CodigoIngresado == 123)
-				{
+		if (CodigoIngresado == 123)
+		{
+			Ventana();
+			//break;
+		}else
+		{ 
+			pos = BuscarEmpleado(CodigoIngresado);
+			
+				if(pos!=-1)
+				{ 
+					obj.LeerDiscoEmpleado(pos);
 					Ventana();
-					break;
-
 				}
-				else if(CodigoIngresado == obj.getcodigo_empleado())
-				{
-					Ventana();
-					break;
-				}
-				
-				MessageBox::Show("Codigo Invalido", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				break;
-			}
+		}
 
 		
 		

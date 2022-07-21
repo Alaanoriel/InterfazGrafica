@@ -18,13 +18,13 @@ inline bool Empleado::LeerDiscoEmpleado(int Posicion)
 {
 	bool x;
 	FILE* Empleado;
-	Empleado = fopen("Datos.txt", "rb");
+	Empleado = fopen("Archivos/Empleados.txt", "rb");
 	if (Empleado == NULL)
 	{
 		return 0;
 	}
-	fseek(Empleado, Posicion * sizeof * this, 0);
-	x = fread(this, sizeof * this, 1, Empleado);
+	fseek(Empleado, Posicion * sizeof(*this), 0);
+	x = fread(this, sizeof(*this), 1, Empleado);
 	fclose(Empleado);
 	return x;
 }
@@ -32,7 +32,7 @@ inline bool Empleado::LeerDiscoEmpleado(int Posicion)
 inline bool Empleado::GrabarEmpleado()
 {
 	FILE* Empleado;
-	Empleado = fopen("Datos.txt", "ab");
+	Empleado = fopen("Archivos/Empleados.txt", "ab");
 	if (Empleado == NULL)
 	{
 		return false;
