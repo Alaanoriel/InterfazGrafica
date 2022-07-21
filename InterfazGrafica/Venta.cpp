@@ -18,6 +18,14 @@ int Venta::get_ID_Venta(){ return ID_venta; }
 
 int Venta::get_ID_Empleado(){ return ID_Empleado; }
 
+//Constructor
+
+Venta::Venta(int cant=0)
+{
+	producto = new Producto[cant];
+	if (producto == NULL) return;
+}
+
 // Sets
 void Venta::set_producto(Producto* prod,int cant)
 {
@@ -31,6 +39,10 @@ void Venta::set_metodo_pago(int metodo) { metodo_pago = metodo; }
 void Venta::set_ID_Venta(int ID) { ID_venta = ID; }
 
 void Venta::set_ID_Empleado(int ID) { ID_Empleado = ID; }
+
+
+
+
 
 //Metodos de guardado y lectura de archivos
 bool Venta::guardar()
