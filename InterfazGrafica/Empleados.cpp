@@ -5,7 +5,7 @@
 void CargarRegistrosEmpleado(Empleado* vec, int cant);
 int contarRegistrosEmpleados();
 int BuscarEmpleado(int Codigo);
-
+bool BajaLogicaEmpleado(int Codigo);
 
 ///METODOS EMPLEADO 
 ///(Antepuestos de "inline" para que funcionen globalmente)
@@ -28,6 +28,19 @@ inline bool Empleado::LeerDiscoEmpleado(int Posicion)
 	fclose(Empleado);
 	return x;
 }
+
+inline bool Empleado::guardarEmpleadoModificado(int pos)
+{
+	FILE* P;
+	P = fopen("Archivos/Empleados.txt", "rb+");
+	if(P==NULL) return false;
+	fseek(P, pos * sizeof(*this), 0);
+	bool guardo = fwrite(this, sizeof(*this), 1, P);
+	fclose(P);
+	return guardo;
+}
+
+
 
 inline bool Empleado::GrabarEmpleado()
 {
@@ -80,3 +93,15 @@ inline int BuscarEmpleado(int Codigo)
 	}
 	return -1;
 }
+
+inline bool BajaLogicaEmpleado(int Codigo)
+{
+	Empleado obj;
+	int pos = BuscarEmpleado(Codigo);
+	if (pos == -1) return false;
+	obj.LeerDiscoEmpleado(pos);
+	obj.setestado_empleado(false);
+	if(obj.guardarEmpleadoModificado(pos))return true;
+	return false;
+}
+

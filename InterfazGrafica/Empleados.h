@@ -14,10 +14,10 @@ public:
 	//declaro gets
 	int getcodigo_empleado() { return codigo_empleado; }
 	int getdni_empleado() { return dni_empleado; }
-	/*std::string*/char* getnombre_empleado() { return nombre_empleado; }
-	/*std::string*/ char* getapellido_empleado() { return apellido_empleado; }
+	char* getnombre_empleado() { return nombre_empleado; }
+	char* getapellido_empleado() { return apellido_empleado; }
 	bool getestado_empleado() { return estado_empleado; }
-	/*std::string*/ char* getcagetoria_empleado() { return categoria_empleado; }
+	char* getcagetoria_empleado() { return categoria_empleado; }
 
 	//declaro sets
 	void setcodigo_empleado(int CodigoEmpleado) { codigo_empleado = CodigoEmpleado; }
@@ -33,7 +33,7 @@ public:
 	//lee
 	bool LeerDiscoEmpleado(int Posicion);
 
-	
+	bool guardarEmpleadoModificado(int pos);
 
 
 };
