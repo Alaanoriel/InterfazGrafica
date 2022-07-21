@@ -165,7 +165,9 @@ private: System::Void Boton_NuevoProducto_Click(System::Object^ sender, System::
 }
 
 private: System::Void Boton_BuscarProducto_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+		
+	InterfazGrafica::FormularioBuscarProducto^ FormularioBuscarProducto = gcnew InterfazGrafica::FormularioBuscarProducto();
+	FormularioBuscarProducto->ShowDialog();
 
 	   }
 
