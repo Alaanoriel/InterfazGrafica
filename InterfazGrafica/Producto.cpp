@@ -10,7 +10,7 @@ bool modificarStockProducto(int ID, int stock);
 
 /// Metodos de la clase "Producto"
 
-inline bool Producto::GrabarProducto()
+ bool Producto::GrabarProducto()
 {
 		FILE* GProducto;
 		GProducto = fopen("Archivos/Productos.txt", "ab");

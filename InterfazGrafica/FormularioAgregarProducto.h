@@ -391,7 +391,7 @@ private: System::Void Boton_Guardar_Click(System::Object^ sender, System::EventA
 		int Codigo = Int64::Parse(TxtBox_Codigo->Text);
 		aux.setcodigo_producto(Codigo);
 
-		aux.GrabarProducto();
+
 
 		MessageBox::Show("Producto agreado", "Completado", MessageBoxButtons::OK, MessageBoxIcon::Information);
 		break;
