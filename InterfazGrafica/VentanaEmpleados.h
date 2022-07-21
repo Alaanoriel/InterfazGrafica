@@ -179,7 +179,8 @@ private: System::Void Boton_Bajatemporal_Click(System::Object^ sender, System::E
 }
 
 private: System::Void Boton_BajaTotal_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+	InterfazGrafica::FormularioBajaTotalEmpleado^ FormularioBajaTotalEmpleado = gcnew InterfazGrafica::FormularioBajaTotalEmpleado();
+	FormularioBajaTotalEmpleado->ShowDialog();
 }
 
 };

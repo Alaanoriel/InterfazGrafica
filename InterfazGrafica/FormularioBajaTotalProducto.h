@@ -76,9 +76,11 @@ namespace InterfazGrafica {
 			// TxtBox_BajaTotalProd
 			// 
 			this->TxtBox_BajaTotalProd->Location = System::Drawing::Point(203, 38);
+			this->TxtBox_BajaTotalProd->MaxLength = 15;
 			this->TxtBox_BajaTotalProd->Name = L"TxtBox_BajaTotalProd";
 			this->TxtBox_BajaTotalProd->Size = System::Drawing::Size(237, 20);
 			this->TxtBox_BajaTotalProd->TabIndex = 2;
+			this->TxtBox_BajaTotalProd->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &FormularioBajaTotalProducto::TxtBox_BajaTotalProd_KeyPress);
 			// 
 			// Bton_Baja
 			// 
@@ -122,6 +124,7 @@ namespace InterfazGrafica {
 			this->Controls->Add(this->Txt_Codigo);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedDialog;
 			this->Name = L"FormularioBajaTotalProducto";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Baja producto";
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -139,5 +142,14 @@ private: System::Void Bton_Limpiar_Click(System::Object^ sender, System::EventAr
 
 
 
+private: System::Void TxtBox_BajaTotalProd_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+
+	if ((e->KeyChar >= 32 && e->KeyChar <= 47) || (e->KeyChar >= 58 && e->KeyChar <= 255))
+	{
+		e->Handled = true;
+		return;
+	}
+
+}
 };
 }

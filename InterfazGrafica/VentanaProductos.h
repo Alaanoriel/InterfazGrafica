@@ -174,7 +174,8 @@ private: System::Void Boton_Bajaprod_Click(System::Object^ sender, System::Event
 
 }
 private: System::Void Boton_BajaTotal_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+	InterfazGrafica::FormularioBajaTotalProducto^ FormularioBajaTotalProducto = gcnew InterfazGrafica::FormularioBajaTotalProducto();
+	FormularioBajaTotalProducto->ShowDialog();
 }
 };
 }

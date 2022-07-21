@@ -174,23 +174,29 @@ namespace InterfazGrafica {
 			// TxtBox_Nombre
 			// 
 			this->TxtBox_Nombre->Location = System::Drawing::Point(149, 82);
+			this->TxtBox_Nombre->MaxLength = 30;
 			this->TxtBox_Nombre->Name = L"TxtBox_Nombre";
 			this->TxtBox_Nombre->Size = System::Drawing::Size(197, 20);
 			this->TxtBox_Nombre->TabIndex = 17;
+			this->TxtBox_Nombre->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &FormularioAgregarProducto::TxtBox_Nombre_KeyPress);
 			// 
 			// TxtBox_Color
 			// 
 			this->TxtBox_Color->Location = System::Drawing::Point(149, 143);
+			this->TxtBox_Color->MaxLength = 20;
 			this->TxtBox_Color->Name = L"TxtBox_Color";
 			this->TxtBox_Color->Size = System::Drawing::Size(197, 20);
 			this->TxtBox_Color->TabIndex = 18;
+			this->TxtBox_Color->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &FormularioAgregarProducto::TxtBox_Color_KeyPress);
 			// 
 			// TxtBox_Talle
 			// 
 			this->TxtBox_Talle->Location = System::Drawing::Point(149, 203);
+			this->TxtBox_Talle->MaxLength = 10;
 			this->TxtBox_Talle->Name = L"TxtBox_Talle";
 			this->TxtBox_Talle->Size = System::Drawing::Size(197, 20);
 			this->TxtBox_Talle->TabIndex = 19;
+			this->TxtBox_Talle->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &FormularioAgregarProducto::TxtBox_Talle_KeyPress);
 			// 
 			// Txt_Stock
 			// 
@@ -219,16 +225,20 @@ namespace InterfazGrafica {
 			// TxtBox_Stock
 			// 
 			this->TxtBox_Stock->Location = System::Drawing::Point(511, 23);
+			this->TxtBox_Stock->MaxLength = 10;
 			this->TxtBox_Stock->Name = L"TxtBox_Stock";
 			this->TxtBox_Stock->Size = System::Drawing::Size(197, 20);
 			this->TxtBox_Stock->TabIndex = 24;
+			this->TxtBox_Stock->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &FormularioAgregarProducto::TxtBox_Stock_KeyPress);
 			// 
 			// TxtBox_Precio
 			// 
 			this->TxtBox_Precio->Location = System::Drawing::Point(511, 79);
+			this->TxtBox_Precio->MaxLength = 10;
 			this->TxtBox_Precio->Name = L"TxtBox_Precio";
 			this->TxtBox_Precio->Size = System::Drawing::Size(197, 20);
 			this->TxtBox_Precio->TabIndex = 25;
+			this->TxtBox_Precio->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &FormularioAgregarProducto::TxtBox_Precio_KeyPress);
 			// 
 			// Txt_Codigo
 			// 
@@ -245,9 +255,11 @@ namespace InterfazGrafica {
 			// TxtBox_Codigo
 			// 
 			this->TxtBox_Codigo->Location = System::Drawing::Point(511, 140);
+			this->TxtBox_Codigo->MaxLength = 20;
 			this->TxtBox_Codigo->Name = L"TxtBox_Codigo";
 			this->TxtBox_Codigo->Size = System::Drawing::Size(197, 20);
 			this->TxtBox_Codigo->TabIndex = 27;
+			this->TxtBox_Codigo->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &FormularioAgregarProducto::TxtBox_Codigo_KeyPress);
 			// 
 			// Boton_Guardar
 			// 
@@ -312,7 +324,18 @@ namespace InterfazGrafica {
 		}
 #pragma endregion
 
-		
+		private: System::Void FormularioAgregarProducto_Load(System::Object^ sender, System::EventArgs^ e) {
+
+			Box_Marca->Items->Add("Nike");
+			Box_Marca->Items->Add("Adidas");
+			Box_Marca->Items->Add("Pumas");
+			Box_Marca->Items->Add("New Balance");
+			Box_Marca->Items->Add("Vans");
+			Box_Marca->Items->Add("Converse");
+			Box_Marca->Items->Add("Otros");
+		}
+
+
 
 		void Limpiar() {
 
@@ -475,5 +498,57 @@ private: System::Void Boton_Guardar_Click(System::Object^ sender, System::EventA
 
 
 
+private: System::Void TxtBox_Nombre_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+
+	if ((e->KeyChar >= 32 && e->KeyChar <= 64) || (e->KeyChar >= 91 && e->KeyChar <= 96) || (e->KeyChar >= 123 && e->KeyChar <= 255))
+	{
+		e->Handled = true;
+		return;
+	}
+}
+
+
+private: System::Void TxtBox_Color_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+
+	if ((e->KeyChar >= 32 && e->KeyChar <= 64) || (e->KeyChar >= 91 && e->KeyChar <= 96) || (e->KeyChar >= 123 && e->KeyChar <= 255))
+	{
+		e->Handled = true;
+		return;
+	}
+}
+
+
+private: System::Void TxtBox_Talle_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+
+	if ((e->KeyChar >= 32 && e->KeyChar <= 47) || (e->KeyChar >= 58 && e->KeyChar <= 255))
+	{
+		e->Handled = true;
+		return;
+	}
+}
+private: System::Void TxtBox_Stock_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+
+	if ((e->KeyChar >= 32 && e->KeyChar <= 47) || (e->KeyChar >= 58 && e->KeyChar <= 255))
+	{
+		e->Handled = true;
+		return;
+	}
+}
+private: System::Void TxtBox_Precio_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+
+	if ((e->KeyChar >= 32 && e->KeyChar <= 47) || (e->KeyChar >= 58 && e->KeyChar <= 255))
+	{
+		e->Handled = true;
+		return;
+	}
+}
+private: System::Void TxtBox_Codigo_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+
+	if ((e->KeyChar >= 32 && e->KeyChar <= 47) || (e->KeyChar >= 58 && e->KeyChar <= 255))
+	{
+		e->Handled = true;
+		return;
+	}
+}
 };
 }
