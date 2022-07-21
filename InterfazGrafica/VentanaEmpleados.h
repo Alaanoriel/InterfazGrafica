@@ -175,6 +175,10 @@ private: System::Void Boton_BuscarEmpleado_Click(System::Object^ sender, System:
 
 
 private: System::Void Boton_Bajatemporal_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	InterfazGrafica::FormularioBajaTemporalEmpleado^ FormularioBajaTemporalEmpleado = gcnew InterfazGrafica::FormularioBajaTemporalEmpleado();
+	FormularioBajaTemporalEmpleado->ShowDialog();
+
 	
 }
 

@@ -172,6 +172,9 @@ private: System::Void Boton_BuscarProducto_Click(System::Object^ sender, System:
 	   }
 
 private: System::Void Boton_Bajaprod_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	InterfazGrafica::FormularioBajaTemporalProducto^ FormularioBajaTemporalProducto = gcnew InterfazGrafica::FormularioBajaTemporalProducto();
+	FormularioBajaTemporalProducto->ShowDialog();
 	
 
 }
