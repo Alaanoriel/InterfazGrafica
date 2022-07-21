@@ -116,7 +116,7 @@ namespace InterfazGrafica {
 			// 
 			this->Box_Marca->BackColor = System::Drawing::Color::White;
 			this->Box_Marca->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->Box_Marca->ForeColor = System::Drawing::SystemColors::Menu;
+			this->Box_Marca->ForeColor = System::Drawing::SystemColors::InfoText;
 			this->Box_Marca->FormattingEnabled = true;
 			this->Box_Marca->Location = System::Drawing::Point(149, 25);
 			this->Box_Marca->Name = L"Box_Marca";
@@ -318,6 +318,7 @@ namespace InterfazGrafica {
 			this->Name = L"FormularioAgregarProducto";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"FormularioAgregarProducto";
+			this->Load += gcnew System::EventHandler(this, &FormularioAgregarProducto::FormularioAgregarProducto_Load_1);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -549,6 +550,16 @@ private: System::Void TxtBox_Codigo_KeyPress(System::Object^ sender, System::Win
 		e->Handled = true;
 		return;
 	}
+}
+private: System::Void FormularioAgregarProducto_Load_1(System::Object^ sender, System::EventArgs^ e) {
+	Box_Marca->Items->Add("Nike");
+	Box_Marca->Items->Add("Adidas");
+	Box_Marca->Items->Add("Vans");
+	Box_Marca->Items->Add("Puma");
+	Box_Marca->Items->Add("Converse");
+	Box_Marca->Items->Add("New Balance");
+	Box_Marca->Items->Add("Otros");
+
 }
 };
 }

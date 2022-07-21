@@ -72,6 +72,7 @@ namespace InterfazGrafica {
 			// TxtBox_DNI
 			// 
 			this->TxtBox_DNI->Location = System::Drawing::Point(158, 30);
+			this->TxtBox_DNI->MaxLength = 20;
 			this->TxtBox_DNI->Name = L"TxtBox_DNI";
 			this->TxtBox_DNI->Size = System::Drawing::Size(237, 20);
 			this->TxtBox_DNI->TabIndex = 0;
@@ -92,7 +93,7 @@ namespace InterfazGrafica {
 			// 
 			// Bton_Buscar
 			// 
-			this->Bton_Buscar->Location = System::Drawing::Point(158, 66);
+			this->Bton_Buscar->Location = System::Drawing::Point(158, 56);
 			this->Bton_Buscar->Name = L"Bton_Buscar";
 			this->Bton_Buscar->Size = System::Drawing::Size(75, 23);
 			this->Bton_Buscar->TabIndex = 2;
@@ -102,7 +103,7 @@ namespace InterfazGrafica {
 			// 
 			// Bton_Limpiar
 			// 
-			this->Bton_Limpiar->Location = System::Drawing::Point(239, 66);
+			this->Bton_Limpiar->Location = System::Drawing::Point(239, 56);
 			this->Bton_Limpiar->Name = L"Bton_Limpiar";
 			this->Bton_Limpiar->Size = System::Drawing::Size(75, 23);
 			this->Bton_Limpiar->TabIndex = 3;
@@ -112,7 +113,7 @@ namespace InterfazGrafica {
 			// 
 			// Bton_Salir
 			// 
-			this->Bton_Salir->Location = System::Drawing::Point(320, 66);
+			this->Bton_Salir->Location = System::Drawing::Point(320, 56);
 			this->Bton_Salir->Name = L"Bton_Salir";
 			this->Bton_Salir->Size = System::Drawing::Size(75, 23);
 			this->Bton_Salir->TabIndex = 4;
